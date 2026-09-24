@@ -1,269 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Card — Imam &amp; Khatib</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1:#070c0a;
+    --bg-2:#0d1712;
+    --card:#0f1a15;
+    --gold:#c9a24a;
+    --gold-soft:#e8cf8f;
+    --emerald:#1f6f54;
+    --emerald-glow:#2f9e79;
+    --text:#eae6da;
+    --text-dim:#9aa39c;
+    --divider:rgba(201,162,74,0.25);
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    height:100%;
+    margin:0;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  body{
+    background:
+      radial-gradient(circle at 50% 0%, #15241d 0%, var(--bg-1) 55%, #050807 100%);
+    color:var(--text);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 16px;
+  }
 
-  <title>Coming Soon</title>
+  /* subtle geometric motif backdrop */
+  .lattice{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    opacity:0.06;
+    background-image:
+      linear-gradient(30deg, var(--gold) 1px, transparent 1px),
+      linear-gradient(150deg, var(--gold) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 64px 110px, 64px 110px, 64px 110px;
+    pointer-events:none;
+  }
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  .card{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:380px;
+    background:linear-gradient(180deg, var(--card) 0%, #0a1310 100%);
+    border:1px solid rgba(201,162,74,0.18);
+    border-radius:22px;
+    padding:38px 28px 30px;
+    text-align:center;
+    box-shadow:
+      0 0 0 1px rgba(0,0,0,0.4),
+      0 30px 60px -20px rgba(0,0,0,0.7),
+      0 0 60px -10px rgba(47,158,121,0.15);
+    animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both;
+  }
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  @keyframes rise{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  .crescent{
+    width:34px;
+    height:34px;
+    margin:0 auto 18px;
+    opacity:0.9;
+  }
 
-    body {
-      font-family: "Inter", sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
+  .avatar-wrap{
+    position:relative;
+    width:118px;
+    height:118px;
+    margin:0 auto 20px;
+  }
+  .avatar-ring{
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    background:conic-gradient(from 0deg, var(--gold), var(--emerald-glow), var(--gold));
+    animation:spin 7s linear infinite;
+    filter:blur(0.3px);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .avatar-ring{animation:none;}
+  }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  .avatar{
+    position:absolute;
+    inset:4px;
+    border-radius:50%;
+    overflow:hidden;
+    background:#16241d center/cover no-repeat;
+    border:3px solid var(--bg-2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--text-dim);
+    font-size:13px;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
 
-      background:
-        radial-gradient(circle at top left, #243b55 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #141e30 0%, transparent 40%),
-        linear-gradient(135deg, #0f172a, #111827);
-    }
+  .name{
+    font-family:'Amiri', serif;
+    font-size:1.9rem;
+    font-weight:700;
+    color:var(--gold-soft);
+    letter-spacing:0.3px;
+    margin:0 0 4px;
+    text-shadow:0 0 18px rgba(201,162,74,0.25);
+  }
+  .titles{
+    font-size:0.92rem;
+    color:var(--emerald-glow);
+    font-weight:500;
+    margin:0 0 2px;
+  }
+  .org{
+    font-size:0.86rem;
+    color:var(--text-dim);
+    margin:2px 0 0;
+    line-height:1.4;
+  }
 
-    .container {
-      width: 100%;
-      max-width: 760px;
-      padding: 40px 20px;
-      text-align: center;
-    }
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:22px 0;
+  }
+  .divider::before,.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--divider), transparent);
+  }
+  .divider svg{ flex-shrink:0; opacity:0.7; }
 
-    /* Logo */
-    .logo {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 28px;
+  .quote{
+    font-family:'Amiri', serif;
+    font-style:italic;
+    font-size:0.95rem;
+    color:var(--text-dim);
+    line-height:1.6;
+    margin:0 0 24px;
+    padding:0 6px;
+  }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .actions{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:10px;
+    margin-bottom:20px;
+  }
+  .action{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+    text-decoration:none;
+    color:var(--text);
+    padding:12px 4px;
+    border-radius:14px;
+    background:rgba(201,162,74,0.04);
+    border:1px solid rgba(201,162,74,0.14);
+    transition:transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+  .action:hover, .action:focus-visible{
+    transform:translateY(-3px);
+    border-color:rgba(201,162,74,0.5);
+    background:rgba(201,162,74,0.09);
+    box-shadow:0 8px 22px -8px rgba(201,162,74,0.35);
+    outline:none;
+  }
+  .action svg{ width:20px; height:20px; stroke:var(--gold-soft); }
+  .action span{ font-size:0.66rem; color:var(--text-dim); letter-spacing:0.2px; }
 
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 24px;
+  .primary-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    width:100%;
+    padding:14px 18px;
+    border-radius:14px;
+    background:linear-gradient(135deg, var(--emerald) 0%, #144435 100%);
+    color:#eafff3;
+    border:1px solid rgba(47,158,121,0.5);
+    font-size:0.92rem;
+    font-weight:500;
+    font-family:inherit;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 0 0 rgba(47,158,121,0);
+    transition:box-shadow 0.3s ease, transform 0.25s ease;
+    margin-bottom:12px;
+  }
+  .primary-btn:hover, .primary-btn:focus-visible{
+    box-shadow:0 0 28px -4px rgba(47,158,121,0.55);
+    transform:translateY(-2px);
+    outline:none;
+  }
+  .primary-btn svg{width:17px;height:17px;stroke:#eafff3;}
 
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:16px;
+  }
+  .socials a{
+    width:38px;height:38px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(201,162,74,0.2);
+    color:var(--text-dim);
+    text-decoration:none;
+    transition:all 0.25s ease;
+  }
+  .socials a:hover, .socials a:focus-visible{
+    color:var(--gold-soft);
+    border-color:var(--gold);
+    box-shadow:0 0 16px -4px rgba(201,162,74,0.5);
+    outline:none;
+  }
+  .socials svg{width:17px;height:17px;}
 
-      font-size: 32px;
-      color: #ffffff;
+  .footer-note{
+    margin-top:22px;
+    font-size:0.68rem;
+    color:#5a655e;
+    letter-spacing:0.4px;
+  }
 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    }
-
-    /* Small Label */
-    .label {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 15px;
-
-      border-radius: 50px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.15);
-
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* Heading */
-    h1 {
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: 1.05;
-      font-weight: 800;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #60a5fa, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Description */
-    .description {
-      max-width: 600px;
-      margin: 0 auto 32px;
-
-      color: #cbd5e1;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    /* Contact */
-    .contact {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-
-      margin-bottom: 28px;
-    }
-
-    .email {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-
-      padding: 13px 20px;
-
-      color: #ffffff;
-      text-decoration: none;
-
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 12px;
-
-      transition: 0.3s ease;
-    }
-
-    .email:hover {
-      background: rgba(255,255,255,0.15);
-      transform: translateY(-2px);
-    }
-
-    /* Social Icons */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .socials a {
-      width: 44px;
-      height: 44px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      color: #ffffff;
-      text-decoration: none;
-
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-
-      transition: 0.3s ease;
-    }
-
-    .socials a:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.18);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 45px;
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      .container {
-        padding: 30px 18px;
-      }
-
-      .logo {
-        width: 75px;
-        height: 75px;
-        border-radius: 20px;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      .description {
-        font-size: 15px;
-      }
-
-      .email {
-        width: 100%;
-        justify-content: center;
-      }
-    }
-  </style>
+  @media (max-width:360px){
+    .actions{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
 </head>
-
 <body>
 
-  <main class="container">
+<div class="lattice"></div>
 
-    <!-- Logo Placeholder -->
-    <div class="logo">
-      <i class="fa-solid fa-rocket"></i>
+<main class="card">
+  <svg class="crescent" viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.4">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#e8cf8f"/>
+        <stop offset="100%" stop-color="#2f9e79"/>
+      </linearGradient>
+    </defs>
+    <path d="M14.5 3.5a8.5 8.5 0 1 0 6 14.4A9.5 9.5 0 0 1 14.5 3.5Z"/>
+  </svg>
+
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <div class="avatar" id="avatar">
+      <!-- Replace src below with the Imam's photo, or leave placeholder -->
+      <img src="https://via.placeholder.com/240x240/16241d/9aa39c?text=Photo" alt="Profile photo" onerror="this.style.display='none'">
     </div>
+  </div>
 
-    <div class="label">
-      Coming Soon
-    </div>
+  <h1 class="name">SHEKH MAHMUDUL HASAN</h1>
+  <p class="titles">Imam &amp; Khatib</p>
+  <p class="org">বৈঠাকাটা বাজার কেন্দ্রীয় জামে মসজিদ<br>বৈটাকাটা, নাজিরপুর, পিরোজপুর</p>
 
-    <!-- Main Heading -->
-    <h1>
-      Something <span>Great</span><br>
-      Is Coming
-    </h1>
+  <div class="divider">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9a24a" stroke-width="1.2">
+      <path d="M12 2l2.5 7.5H22l-6 4.6 2.3 7.4L12 17l-6.3 4.5 2.3-7.4-6-4.6h7.5z"/>
+    </svg>
+  </div>
 
-    <!-- Message -->
-    <p class="description">
-      We’re working hard behind the scenes to bring you a fresh
-      and amazing experience. Our new website will be launching soon.
-      Stay tuned!
-    </p>
+  <p class="quote">"The best among you are those who have the best manners and character."</p>
 
-    <!-- Contact -->
-    <div class="contact">
-      <a href="mailto:hello@example.com" class="email">
-        <i class="fa-solid fa-envelope"></i>
-        hello@example.com
-      </a>
-    </div>
+  <div class="actions">
+    <a class="action" href="tel:+8801711440955" aria-label="Call">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </a>
+    <a class="action" href="https://wa.me/8801711440955" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="action" href="mailto:imam@alnoormasjid.org" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+      <span>Email</span>
+    </a>
+    <a class="action" href="https://maps.google.com/?q=Al-Noor+Jame+Masjid+Dhaka" target="_blank" rel="noopener" aria-label="Location">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Location</span>
+    </a>
+  </div>
 
-    <!-- Social Media -->
-    <div class="socials">
+  <button class="primary-btn" id="saveContact">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+    Save Contact
+  </button>
 
-      <a href="#" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
+  <div class="socials">
+    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.6 1.6-1.6h1.7V3.3C16.5 3.2 15.4 3 14.2 3 11.6 3 10 4.6 10 7.5v2.3H7.3V13H10v8h3.5z"/></svg>
+    </a>
+    <a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2s-.2-1.5-.8-2.2c-.8-.8-1.7-.8-2.1-.9C16.3 5 12 5 12 5s-4.3 0-7.1.1c-.4 0-1.3.1-2.1.9C2.2 6.7 2 8.2 2 8.2S1.8 10 1.8 11.7v.6c0 1.7.2 3.5.2 3.5s.2 1.5.8 2.2c.8.8 1.8.8 2.3.9 1.6.2 6.9.2 6.9.2s4.3 0 7.1-.2c.4 0 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.5v-.6C22.2 10 22 8.2 22 8.2zM9.9 14.6V9l5.8 2.8-5.8 2.8z"/></svg>
+    </a>
+  </div>
 
-      <a href="#" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
+  <p class="footer-note">Boithakata Bazar Central Jama Masjid  &middot; Pirojpur</p>
+</main>
 
-      <a href="#" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
+<script>
+document.getElementById('saveContact').addEventListener('click', function(){
+  var vcf = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Shekh;Mahmudul Hasan',
+    'FN:Shekh MahmuduL Hsan',
+    'ORG:Boithakata Bajar Central Jame Masjid',
+    'TITLE:Imam & Khatib',
+    'TEL;TYPE=CELL:+8801711440955',
+    'EMAIL:shekhmahmudulhasan@gmail.com',
+    'ADR;TYPE=WORK:;;Boithakata Bajar Central Jame Masjid';Najirpur;;;Pirojpur',
+    'END:VCARD'
+  ].join('\n');
 
-      <a href="#" aria-label="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-
-    </div>
-
-    <footer>
-      © 2026 Your Website. All rights reserved.
-    </footer>
-
-  </main>
+  var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'Shekh_Mahmudul_Hasan.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+</script>
 
 </body>
 </html>
