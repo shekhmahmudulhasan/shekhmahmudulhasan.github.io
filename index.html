@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shekh Mahmudul Hasan — Imam, Khateeb, Scholar & Mudabbir">
+<meta name="description" content="Shekh Mahmudul Hasan — Imam, Khateeb & Mudabbir">
 <title>Shekh Mahmudul Hasan | Shekh.com.bd</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +72,7 @@ img{display:block;max-width:100%}
 .hero-inner{min-height:300px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative}
 .hero-content{text-align:center;max-width:610px;margin-left:0;padding:22px 0}
 .profile-photo{
-  width:112px;height:112px;border-radius:50%;object-fit:cover;margin:0 auto 9px;
+  width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 9px;
   border:4px solid var(--gold);box-shadow:0 5px 20px rgba(0,0,0,.12);
   background:#dcebe4
 }
@@ -144,6 +144,44 @@ img{display:block;max-width:100%}
 .quick-row .ico{color:var(--green);font-size:14px}
 .quick-row b{font-size:11px;color:#6d756f}
 .quick-row span:last-child{text-align:right}
+
+.role-panel{padding:16px}
+.role-heading{font-family:"Noto Serif Bengali",serif;font-size:15px;font-weight:700;color:#17382d;margin-bottom:9px}
+.role-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+.role-tags span{background:#edf5f1;color:var(--green);border:1px solid #d8e6df;border-radius:20px;padding:4px 9px;font-size:10px;font-weight:600}
+.panel-actions{display:grid;gap:7px}
+.panel-action{display:grid;grid-template-columns:29px 1fr 15px;gap:8px;align-items:center;background:#f8faf8;border:1px solid #e4ebe7;border-radius:7px;padding:8px 9px}
+.panel-action:hover{border-color:#b9d0c6;background:#f2f8f4}
+.action-icon{width:27px;height:27px;border-radius:7px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px}
+.panel-action b{display:block;font-size:10px;color:#1d3d32}
+.panel-action small{display:block;color:#7b8580;font-size:8px;margin-top:1px}
+.panel-action strong{color:var(--green);font-size:15px}
+
+
+/* FORM MODALS */
+.modal{position:fixed;inset:0;background:rgba(9,34,26,.62);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.modal.show{display:flex}
+.modal-box{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border:1px solid #e2e9e5;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative}
+.modal-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #edf1ef;padding:18px 20px 14px;display:flex;align-items:center;justify-content:space-between}
+.modal-head h3{margin:0;color:#17382d;font-family:"Noto Serif Bengali",serif;font-size:20px}
+.modal-head p{margin:4px 0 0;color:#7b8580;font-size:11px}
+.close-modal{border:0;background:#edf4f0;color:var(--green);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+.form-body{padding:18px 20px 22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:11px;font-weight:700;color:#29483d}
+.form-group label .req{color:#b45b4d}
+.form-group input,.form-group select,.form-group textarea{width:100%;box-sizing:border-box;border:1px solid #dce5e0;background:#fbfdfc;border-radius:9px;padding:10px 11px;font-family:inherit;font-size:12px;color:#263d35;outline:none;transition:.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#8fb4a4;box-shadow:0 0 0 3px rgba(48,105,82,.08);background:#fff}
+.form-group textarea{min-height:105px;resize:vertical}
+.form-note{margin:0 0 14px;padding:9px 11px;background:#f2f8f5;border:1px solid #dcebe3;border-radius:8px;color:#597067;font-size:10px;line-height:1.6}
+.form-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:16px}
+.form-btn{border:0;border-radius:8px;padding:10px 17px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.form-btn.cancel{background:#edf1ef;color:#53645d}
+.form-btn.submit{background:var(--green);color:#fff}
+.form-btn.submit:hover{background:#244f3e}
+@media(max-width:650px){.modal{padding:9px}.modal-box{max-height:94vh;border-radius:14px}.modal-head{padding:15px}.modal-head h3{font-size:17px}.form-body{padding:15px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.form-actions{flex-direction:column}.form-btn{width:100%}}
 
 /* BAYAN */
 .bayan-section{background:#edf4f0}
@@ -249,8 +287,9 @@ footer{background:#063e30;color:#c9d9d3;font-size:9px}
     linear-gradient(180deg,rgba(251,250,245,.96) 0%,rgba(251,250,245,.90) 57%,rgba(251,250,245,.35) 100%),
     url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1000&q=80") center/cover}
   .hero-inner{min-height:500px;display:block;padding-top:30px}
-  .hero-content{padding-top:15px}
-  .hero h1{font-size:28px}
+  .hero-content{padding-top:15px;width:100%;display:flex;flex-direction:column;align-items:center}
+  .profile-photo{display:block;margin-left:auto;margin-right:auto}
+  .hero h1{font-size:28px;text-align:center}
   .hero-actions{gap:6px}
   .hero-btn{width:78px}
   .quote{margin-top:0}
@@ -332,7 +371,7 @@ footer{background:#063e30;color:#c9d9d3;font-size:9px}
       <!-- আপনার ছবি দিতে হলে নিচের div-এর বদলে:
            <img class="profile-photo" src="images/profile.jpg" alt="Shekh Mahmudul Hasan">
       -->
-      <div class="profile-fallback">ش</div>
+      <img class="profile-photo" src="images/profile.png" alt="Shekh Mahmudul Hasan">
       <h1>Shekh Mahmudul Hasan</h1>
       <div class="role">Imam, Khateeb &amp; Mudabbir</div>
 
@@ -367,11 +406,26 @@ footer{background:#063e30;color:#c9d9d3;font-size:9px}
         <a class="read-more" href="#contact">Read More About Me&nbsp; →</a>
       </div>
 
-      <div class="quick-info">
-        <div class="quick-row"><span class="ico">▣</span><b>Role</b><span>Imam, Khateeb</span></div>
-        <div class="quick-row"><span class="ico">●</span><b>Language</b><span>বাংলা, العربية</span></div>
-        <div class="quick-row"><span class="ico">⌖</span><b>Location</b><span>Bangladesh</span></div>
-        <div class="quick-row"><span class="ico">✉</span><b>Email</b><span>shekhmahmudulhasan@...</span></div>
+      <div class="quick-info role-panel">
+        <div class="role-heading">পরিচয়</div>
+        <div class="role-tags">
+          <span>ইমাম</span>
+          <span>খতিব</span>
+          <span>স্কলার</span>
+          <span>মুদাব্বির</span>
+        </div>
+        <div class="panel-actions">
+          <a href="#" class="panel-action" data-open-modal="mahhfilModal">
+            <span class="action-icon">📅</span>
+            <span><b>মাহফিলের সিরিয়াল</b><small>মাহফিলের জন্য আবেদন করুন</small></span>
+            <strong>→</strong>
+          </a>
+          <a href="#" class="panel-action" data-open-modal="tadbirModal">
+            <span class="action-icon">📝</span>
+            <span><b>তদবিরের আবেদন</b><small>তদবিরের জন্য আবেদন করুন</small></span>
+            <strong>→</strong>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -503,6 +557,55 @@ footer{background:#063e30;color:#c9d9d3;font-size:9px}
   </div>
 </footer>
 
+
+<!-- FORM DESIGN PLACEHOLDERS: পরে Google Forms-এর সঙ্গে সংযোগ করা হবে -->
+<div class="modal" id="mahhfilModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mahhfilTitle">
+    <div class="modal-head">
+      <div><h3 id="mahhfilTitle">মাহফিলের সিরিয়াল</h3><p>মাহফিলের জন্য আপনার তথ্য প্রদান করুন</p></div>
+      <button class="close-modal" type="button" data-close-modal aria-label="বন্ধ করুন">×</button>
+    </div>
+    <form class="form-body demo-form">
+      <p class="form-note">এটি বর্তমানে শুধু ডিজাইন প্রস্তুতি। Google Form তৈরি হলে এই ফর্মের Submit বাটনটি Google Form-এর সঙ্গে সংযুক্ত করা হবে।</p>
+      <div class="form-grid">
+        <div class="form-group"><label>আয়োজকের নাম <span class="req">*</span></label><input required type="text" name="organizer_name" placeholder="আয়োজকের নাম লিখুন"></div>
+        <div class="form-group"><label>মোবাইল নম্বর <span class="req">*</span></label><input required type="tel" name="phone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group"><label>মাহফিলের স্থান <span class="req">*</span></label><input required type="text" name="venue" placeholder="মাহফিলের স্থান"></div>
+        <div class="form-group"><label>সম্ভাব্য তারিখ</label><input type="date" name="date"></div>
+        <div class="form-group full"><label>বিষয় / আলোচনার বিষয়</label><input type="text" name="topic" placeholder="বয়ানের বিষয় লিখুন"></div>
+        <div class="form-group full"><label>অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অতিরিক্ত তথ্য লিখুন"></textarea></div>
+      </div>
+      <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠানোর জন্য প্রস্তুত</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="tadbirModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tadbirTitle">
+    <div class="modal-head">
+      <div><h3 id="tadbirTitle">তদবিরের আবেদন</h3><p>আবেদনকারীর তথ্য ও সমস্যার বিবরণ দিন</p></div>
+      <button class="close-modal" type="button" data-close-modal aria-label="বন্ধ করুন">×</button>
+    </div>
+    <form class="form-body demo-form">
+      <p class="form-note">এটি বর্তমানে শুধু ডিজাইন প্রস্তুতি। Google Form তৈরি হলে এই ফর্মের Submit বাটনটি Google Form-এর সঙ্গে সংযুক্ত করা হবে।</p>
+      <div class="form-grid">
+        <div class="form-group"><label>আবেদনকারীর নাম <span class="req">*</span></label><input required type="text" name="applicant_name" placeholder="আপনার নাম"></div>
+        <div class="form-group"><label>রোগীর সাথে আবেদনকারীর সম্পর্ক <span class="req">*</span></label><input required type="text" name="relationship" placeholder="যেমন: বাবা, মা, ভাই"></div>
+        <div class="form-group"><label>রোগীর নাম <span class="req">*</span></label><input required type="text" name="patient_name" placeholder="রোগীর নাম"></div>
+        <div class="form-group"><label>বয়স <span class="req">*</span></label><input required type="number" min="0" max="150" name="age" placeholder="বয়স"></div>
+        <div class="form-group"><label>বাবার নাম</label><input type="text" name="father_name" placeholder="বাবার নাম"></div>
+        <div class="form-group"><label>মায়ের নাম</label><input type="text" name="mother_name" placeholder="মায়ের নাম"></div>
+        <div class="form-group full"><label>সমস্যা <span class="req">*</span></label><input required type="text" name="problem" placeholder="সমস্যাটি সংক্ষেপে লিখুন"></div>
+        <div class="form-group"><label>সমস্যার সময়কাল</label><input type="text" name="duration" placeholder="যেমন: ৬ মাস / ২ বছর"></div>
+        <div class="form-group"><label>মোবাইল নম্বর <span class="req">*</span></label><input required type="tel" name="phone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group full"><label>বিস্তারিত আবেদন <span class="req">*</span></label><textarea required name="details" placeholder="আপনার আবেদন বিস্তারিত লিখুন"></textarea></div>
+        <div class="form-group full"><label>প্রয়োজনীয় অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অন্য কোনো তথ্য থাকলে লিখুন"></textarea></div>
+      </div>
+      <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠানোর জন্য প্রস্তুত</button></div>
+    </form>
+  </div>
+</div>
+
 <script>
 function toggleMenu(){
   const n=document.getElementById('mobileNav');
@@ -511,6 +614,34 @@ function toggleMenu(){
 document.querySelectorAll('#mobileNav a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('mobileNav').style.display='none');
 });
+
+// Form UI only — Google Forms will be connected later.
+document.querySelectorAll('[data-open-modal]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    const modal=document.getElementById(btn.dataset.openModal);
+    if(modal){modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  });
+});
+document.querySelectorAll('[data-close-modal]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const modal=btn.closest('.modal');
+    if(modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  });
+});
+document.querySelectorAll('.modal').forEach(modal=>{
+  modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}});
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') document.querySelectorAll('.modal.show').forEach(modal=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';});
+});
+document.querySelectorAll('.demo-form').forEach(form=>{
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    alert('ফর্মের ডিজাইন প্রস্তুত আছে। Google Form সংযোগ করার পর এই Submit বাটনটি সরাসরি আবেদন জমা দেবে।');
+  });
+});
+
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 
