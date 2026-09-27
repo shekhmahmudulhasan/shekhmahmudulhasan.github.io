@@ -1,1 +1,609 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shekh Mahmudul Hasan — Imam, Khateeb & Mudabbir">
+<title>Shekh Mahmudul Hasan | Shekh.com.bd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
 
+<style>
+:root{
+  --green:#075d46;
+  --deep:#004b39;
+  --dark:#12352b;
+  --gold:#b9964f;
+  --cream:#f7f6f0;
+  --soft:#eef4f0;
+  --line:#dfe6e1;
+  --text:#1c2823;
+  --muted:#68746f;
+  --white:#fff;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:#f7f8f5;color:var(--text);
+  font-family:"Hind Siliguri",sans-serif;
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.container{width:min(94%,var(--max));margin:auto}
+
+/* NAV */
+.navbar{
+  height:64px;background:rgba(255,255,255,.96);
+  border-bottom:1px solid #e7eae8;position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(10px)
+}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px;font-family:"Noto Serif Bengali",serif;font-weight:700;color:#1c2d26}
+.logo-symbol{
+  width:32px;height:32px;border:2px solid var(--green);border-radius:50%;
+  display:grid;place-items:center;color:var(--green);font-size:17px
+}
+.nav-links{display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600}
+.nav-links a{padding:21px 0;position:relative}
+.nav-links a:first-child:after{
+  content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;background:var(--green)
+}
+.connect{
+  color:#fff!important;background:var(--green);padding:9px 16px!important;
+  border-radius:9px;box-shadow:0 4px 12px rgba(7,93,70,.16)
+}
+.mobile-toggle{display:none}
+
+/* HERO */
+.hero{
+  min-height:300px;position:relative;overflow:hidden;
+  background:
+    linear-gradient(90deg,#fbfaf5 0%,#fbfaf5 48%,rgba(251,250,245,.88) 62%,rgba(251,250,245,.10) 100%),
+    url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1500&q=85") right center/cover no-repeat;
+}
+.hero:before{
+  content:"";position:absolute;inset:0;opacity:.23;
+  background-image:radial-gradient(#b79b5e 1px,transparent 1px);
+  background-size:34px 34px;mask-image:linear-gradient(90deg,black 0%,transparent 72%)
+}
+.hero-inner{min-height:300px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative}
+.hero-content{text-align:center;max-width:610px;margin-left:0;padding:22px 0}
+.profile-photo{
+  width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 9px;
+  border:4px solid var(--gold);box-shadow:0 5px 20px rgba(0,0,0,.12);
+  background:#dcebe4
+}
+.profile-fallback{
+  width:112px;height:112px;border-radius:50%;margin:0 auto 9px;border:4px solid var(--gold);
+  display:grid;place-items:center;background:linear-gradient(135deg,#e9f3ee,#cbded5);
+  color:var(--green);font-family:serif;font-size:45px
+}
+.hero h1{
+  font-family:"Noto Serif Bengali",serif;font-size:31px;line-height:1.2;
+  margin:0;color:#132d24
+}
+.role{font-size:16px;color:#9a7840;font-weight:600;margin:3px 0 14px}
+.hero-actions{display:flex;justify-content:center;gap:9px}
+.hero-btn{
+  width:92px;height:49px;border:1px solid #e0e4e1;border-radius:8px;background:#fff;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);display:flex;flex-direction:column;
+  justify-content:center;align-items:center;font-size:11px;font-weight:600
+}
+.hero-btn b{font-size:18px;color:var(--green);line-height:1}
+.hero-ornament{position:absolute;left:48%;top:20px;color:rgba(185,150,79,.28);font-size:28px}
+
+/* QUOTE */
+.quote{
+  margin-top:-1px;background:#fff;border:1px solid #e4e4df;border-radius:9px;
+  min-height:105px;box-shadow:0 3px 12px rgba(0,0,0,.07);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  position:relative;overflow:hidden
+}
+.quote:before,.quote:after{
+  content:"❧";position:absolute;color:#b59a5c;font-size:55px;opacity:.45
+}
+.quote:before{left:28px;transform:rotate(180deg)}
+.quote:after{right:28px}
+.quote-inner{padding:17px 100px}
+.quote-arabic{font-family:serif;font-size:27px;direction:rtl;color:#1d3029}
+.quote-bn{font-size:16px;font-weight:600}
+.quote-ref{font-size:11px;color:#8b8d88;margin-top:1px}
+
+/* COMMON SECTION */
+.section{padding:26px 0}
+.section-title{
+  display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;
+  font-family:"Noto Serif Bengali",serif;font-size:20px;color:#18362c
+}
+.section-title:before,.section-title:after{content:"";height:1px;width:30px;background:#aac3b8}
+.section-title .round{
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:var(--green);color:#fff;font-family:sans-serif;font-size:13px
+}
+.section-title.gold .round{background:#a88a49}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.45fr .85fr;gap:26px;align-items:center}
+.about-text{padding-left:12px}
+.about-label{font-weight:700;font-size:17px;display:flex;align-items:center;gap:7px;margin-bottom:8px}
+.about-label span{width:27px;height:27px;background:var(--green);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:12px}
+.about-text p{font-size:13px;color:#4f5d57;margin:0 0 9px}
+.read-more{
+  display:inline-flex;margin-top:3px;background:var(--green);color:#fff;
+  border-radius:7px;padding:8px 15px;font-size:11px;font-weight:600
+}
+.quick-info{
+  background:#fff;border:1px solid #e4e7e5;border-radius:9px;padding:14px 18px;
+  box-shadow:0 3px 11px rgba(0,0,0,.05)
+}
+.quick-row{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:center;padding:7px 0;font-size:12px;border-bottom:1px solid #eef0ee}
+.quick-row:last-child{border-bottom:0}
+.quick-row .ico{color:var(--green);font-size:14px}
+.quick-row b{font-size:11px;color:#6d756f}
+.quick-row span:last-child{text-align:right}
+
+.role-panel{padding:16px}
+.role-heading{font-family:"Noto Serif Bengali",serif;font-size:15px;font-weight:700;color:#17382d;margin-bottom:9px}
+.role-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+.role-tags span{background:#edf5f1;color:var(--green);border:1px solid #d8e6df;border-radius:20px;padding:4px 9px;font-size:10px;font-weight:600}
+.panel-actions{display:grid;gap:7px}
+.panel-action{display:grid;grid-template-columns:29px 1fr 15px;gap:8px;align-items:center;background:#f8faf8;border:1px solid #e4ebe7;border-radius:7px;padding:8px 9px}
+.panel-action:hover{border-color:#b9d0c6;background:#f2f8f4}
+.action-icon{width:27px;height:27px;border-radius:7px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px}
+.panel-action b{display:block;font-size:10px;color:#1d3d32}
+.panel-action small{display:block;color:#7b8580;font-size:8px;margin-top:1px}
+.panel-action strong{color:var(--green);font-size:15px}
+
+
+/* FORM MODALS */
+.modal{position:fixed;inset:0;background:rgba(9,34,26,.62);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
+.modal.show{display:flex}
+.modal-box{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border:1px solid #e2e9e5;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative}
+.modal-head{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #edf1ef;padding:18px 20px 14px;display:flex;align-items:center;justify-content:space-between}
+.modal-head h3{margin:0;color:#17382d;font-family:"Noto Serif Bengali",serif;font-size:20px}
+.modal-head p{margin:4px 0 0;color:#7b8580;font-size:11px}
+.close-modal{border:0;background:#edf4f0;color:var(--green);width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer}
+.form-body{padding:18px 20px 22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:11px;font-weight:700;color:#29483d}
+.form-group label .req{color:#b45b4d}
+.form-group input,.form-group select,.form-group textarea{width:100%;box-sizing:border-box;border:1px solid #dce5e0;background:#fbfdfc;border-radius:9px;padding:10px 11px;font-family:inherit;font-size:12px;color:#263d35;outline:none;transition:.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#8fb4a4;box-shadow:0 0 0 3px rgba(48,105,82,.08);background:#fff}
+.form-group textarea{min-height:105px;resize:vertical}
+.form-note{margin:0 0 14px;padding:9px 11px;background:#f2f8f5;border:1px solid #dcebe3;border-radius:8px;color:#597067;font-size:10px;line-height:1.6}
+.form-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:16px}
+.form-btn{border:0;border-radius:8px;padding:10px 17px;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer}
+.form-btn.cancel{background:#edf1ef;color:#53645d}
+.form-btn.submit{background:var(--green);color:#fff}
+.form-btn.submit:hover{background:#244f3e}
+@media(max-width:650px){.modal{padding:9px}.modal-box{max-height:94vh;border-radius:14px}.modal-head{padding:15px}.modal-head h3{font-size:17px}.form-body{padding:15px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.form-actions{flex-direction:column}.form-btn{width:100%}}
+
+/* GREEN ACTIVITY */
+.activities{background:linear-gradient(120deg,#00543e,#00684d);color:#fff;padding:24px 0}
+.activity-title{color:#fff;margin-bottom:17px}
+.activity-title:before,.activity-title:after{background:rgba(255,255,255,.3)}
+.activity-cards{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.activity{
+  background:rgba(255,255,255,.97);color:#18362c;border-radius:8px;padding:12px 6px;
+  text-align:center;min-height:126px
+}
+.activity .circle{
+  width:42px;height:42px;border-radius:50%;background:var(--green);color:#e8d09a;
+  display:grid;place-items:center;margin:0 auto 7px;font-size:19px
+}
+.activity h3{font-size:11px;margin:0 0 4px}
+.activity p{font-size:8px;color:#69736e;line-height:1.35;margin:0}
+.view-all{display:block;width:max-content;margin:10px auto 0;background:#fff;color:var(--green);padding:5px 11px;border-radius:6px;font-size:9px}
+
+/* ARTICLES */
+.articles-section{background:#edf4f0}
+.article-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.article-card{
+  background:#fff;border:1px solid #e2e9e5;border-radius:10px;padding:16px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);display:flex;flex-direction:column
+}
+.article-icon{
+  width:38px;height:38px;border-radius:50%;background:var(--green);color:#e8d09a;
+  display:grid;place-items:center;font-size:16px;margin-bottom:10px
+}
+.article-date{font-size:9px;color:#9a7840;font-weight:700;margin-bottom:5px}
+.article-card h3{font-size:13px;margin:0 0 6px;line-height:1.4;color:#17382d}
+.article-card p{font-size:11px;color:var(--muted);margin:0 0 11px;flex:1}
+.article-link{
+  display:inline-flex;width:max-content;background:var(--green);color:#fff;
+  padding:6px 12px;border-radius:6px;font-size:10px;font-weight:600
+}
+
+/* SOCIAL */
+.social-section{background:#eef0eb}
+.socials{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.social{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600}
+.social-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700}
+.fb{background:#1877f2}.yt{background:#e62117}.tg{background:#2aabee}.wa{background:#20c66b}.ig{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7)}
+
+/* CONTACT */
+.contact{background:#fff;padding:28px 0}
+.contact-grid{display:grid;grid-template-columns:1.15fr .65fr .85fr;gap:24px;align-items:center}
+.contact-info h2{font-family:"Noto Serif Bengali",serif;font-size:21px;margin:0 0 5px}
+.contact-info>p{font-size:11px;color:#66716c;margin:0 0 13px}
+.contact-details{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.detail{font-size:10px;color:#65706b}
+.detail b{display:block;color:#234137;margin-bottom:1px}
+.qr{
+  background:#fff;border:1px solid #e2e5e2;border-radius:8px;padding:11px;
+  text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.06)
+}
+.qr-code{
+  width:100px;height:100px;margin:auto;
+  background:
+    linear-gradient(90deg,#111 10px,transparent 10px 20px,#111 20px 27px,transparent 27px 34px,#111 34px 45px,transparent 45px),
+    linear-gradient(#111 10px,transparent 10px 18px,#111 18px 25px,transparent 25px 33px,#111 33px 45px,transparent 45px),
+    repeating-linear-gradient(45deg,#111 0 3px,#fff 3px 7px);
+  border:7px solid #fff;box-shadow:inset 0 0 0 2px #111
+}
+.qr small{font-size:9px;color:#6e7772}
+.dua{
+  min-height:145px;border-radius:9px;background:linear-gradient(145deg,#00533e,#00674c);
+  color:#fff;display:grid;place-items:center;text-align:center;padding:20px;position:relative;overflow:hidden
+}
+.dua:before,.dua:after{content:"";position:absolute;border:1px solid rgba(220,198,135,.35);border-radius:50%}
+.dua:before{width:190px;height:190px}.dua:after{width:140px;height:140px}
+.dua p{position:relative;font-family:serif;font-size:15px;direction:rtl}
+.dua small{display:block;font-family:"Hind Siliguri";font-size:9px;direction:ltr;color:#dce9e3}
+
+/* FOOTER */
+footer{background:#063e30;color:#c9d9d3;font-size:9px}
+.footer-inner{height:42px;display:flex;align-items:center;justify-content:space-between}
+.footer-links{display:flex;gap:18px}
+.footer-brand{font-size:10px}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  .navbar,.nav-inner{height:58px}
+  .nav-links{display:none}
+  .mobile-toggle{display:block;border:0;background:none;font-size:22px;color:var(--green)}
+  .hero{min-height:500px;background:
+    linear-gradient(180deg,rgba(251,250,245,.96) 0%,rgba(251,250,245,.90) 57%,rgba(251,250,245,.35) 100%),
+    url("https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1000&q=80") center/cover}
+  .hero-inner{min-height:500px;display:block;padding-top:30px}
+  .hero-content{padding-top:15px;width:100%;display:flex;flex-direction:column;align-items:center}
+  .profile-photo{display:block;margin-left:auto;margin-right:auto}
+  .hero h1{font-size:28px;text-align:center}
+  .hero-actions{gap:6px}
+  .hero-btn{width:78px}
+  .quote{margin-top:0}
+  .quote-inner{padding:17px 45px}
+  .quote-arabic{font-size:20px}
+  .quote-bn{font-size:13px}
+  .quote:before,.quote:after{font-size:35px}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-text{padding-left:0}
+  .activity-cards{grid-template-columns:repeat(2,1fr)}
+  .article-grid{grid-template-columns:repeat(2,1fr)}
+  .socials{gap:18px 30px}
+  .contact-details{grid-template-columns:1fr 1fr}
+  .footer-inner{height:auto;padding:13px 0;gap:10px;flex-direction:column}
+}
+@media(max-width:430px){
+  .container{width:92%}
+  .hero h1{font-size:25px}
+  .hero{min-height:455px}
+  .hero-inner{min-height:455px}
+  .profile-photo,.profile-fallback{width:100px;height:100px}
+  .hero-btn{width:72px;height:46px}
+  .quote-inner{padding:15px 34px}
+  .quote-arabic{font-size:18px}
+  .activity-cards{gap:6px}
+  .activity{min-height:120px;padding:10px 4px}
+  .article-grid{grid-template-columns:1fr;gap:8px}
+  .contact-details{grid-template-columns:1fr}
+}
+
+/* small entrance effect */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero-content,.quote,.about-grid,.activity-cards,.article-grid,.socials,.contact-grid{
+  animation:rise .65s ease both
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">
+      <span class="logo-symbol">✥</span>
+      <span>Shekh.com.bd</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#activities">Activities</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact</a>
+      <a class="connect" href="https://wa.me/shekh.md.hasan" target="_blank">♟ Connect</a>
+    </nav>
+
+    <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+  </div>
+  <div id="mobileNav" style="display:none;background:#fff;border-top:1px solid #eee;padding:10px 5%;box-shadow:0 5px 15px rgba(0,0,0,.06)">
+    <a href="#home" style="display:block;padding:8px">Home</a>
+    <a href="#about" style="display:block;padding:8px">About</a>
+    <a href="#activities" style="display:block;padding:8px">Activities</a>
+    <a href="#articles" style="display:block;padding:8px">Articles</a>
+    <a href="#contact" style="display:block;padding:8px">Contact</a>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <!-- ছবি বদলাতে চাইলে নিচের src="images/profile.png" পরিবর্তন করুন। -->
+      <img class="profile-photo" src="images/profile.png" alt="Shekh Mahmudul Hasan">
+      <h1>Shekh Mahmudul Hasan</h1>
+      <div class="role">Imam, Khateeb &amp; Mudabbir</div>
+
+      <div class="hero-actions">
+        <a class="hero-btn" href="tel:+8801711440955"><b>☎</b>Call</a>
+        <a class="hero-btn" href="https://wa.me/shekh.md.hasan" target="_blank"><b>◉</b>WhatsApp</a>
+        <a class="hero-btn" href="mailto:shekhmahmudulhasan@gmail.com"><b>✉</b>Email</a>
+        <a class="hero-btn" href="#contact"><b>●</b>Location</a>
+      </div>
+    </div>
+    <div class="hero-ornament">✦</div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- QUOTE -->
+  <section class="quote">
+    <div class="quote-inner">
+      <div class="quote-arabic">إِنَّ أَحْسَنَ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
+      <div class="quote-bn">সেরা মানুষ সেই, যে মানুষের জন্য সবচেয়ে বেশি উপকারী।</div>
+      <div class="quote-ref">বাণী/উক্তি — আপনার পছন্দের নির্ভরযোগ্য রেফারেন্স এখানে দিন</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="about-label"><span>●</span> About Me</div>
+        <p>আসসালামু আলাইকুম। আমি <b>শেখ মাহমুদুল হাসান</b>। দ্বীনি শিক্ষা, বয়ান, খুতবা, ইসলামিক শিক্ষা এবং মানুষের উপকারী কাজে নিজেকে নিয়োজিত রাখার চেষ্টা করি।</p>
+        <p>এই ওয়েবসাইটে আমার পরিচয়, বয়ান, ইসলামিক কার্যক্রম, মাহফিলের সিরিয়াল, তদবিরের আবেদন এবং যোগাযোগের মাধ্যম এক জায়গায় পাওয়া যাবে।</p>
+        <a class="read-more" href="#contact">Read More About Me&nbsp; →</a>
+      </div>
+
+      <div class="quick-info role-panel">
+        <div class="role-heading">পরিচয়</div>
+        <div class="role-tags">
+          <span>ইমাম</span>
+          <span>খতিব</span>
+          <span>স্কলার</span>
+          <span>মুদাব্বির</span>
+        </div>
+        <div class="panel-actions">
+          <a href="#" class="panel-action" data-open-modal="mahhfilModal">
+            <span class="action-icon">📅</span>
+            <span><b>মাহফিলের সিরিয়াল</b><small>মাহফিলের জন্য আবেদন করুন</small></span>
+            <strong>→</strong>
+          </a>
+          <a href="#" class="panel-action" data-open-modal="tadbirModal">
+            <span class="action-icon">📝</span>
+            <span><b>তদবিরের আবেদন</b><small>তদবিরের জন্য আবেদন করুন</small></span>
+            <strong>→</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ACTIVITIES -->
+<section class="activities" id="activities">
+  <div class="container">
+    <div class="section-title activity-title"><span class="round">▣</span> My Activities &amp; Services</div>
+    <div class="activity-cards">
+      <article class="activity"><div class="circle">⌂</div><h3>Imam</h3><p>মসজিদে ইমামতি ও দ্বীনি খেদমত।</p></article>
+      <article class="activity"><div class="circle">🎙</div><h3>Khateeb</h3><p>জুমা ও বিভিন্ন মাহফিলে বয়ান।</p></article>
+      <article class="activity"><div class="circle">▣</div><h3>Islamic Education</h3><p>কুরআন-সুন্নাহভিত্তিক শিক্ষা।</p></article>
+      <article class="activity"><div class="circle">▶</div><h3>Bayan &amp; Media</h3><p>ইসলামিক ভিডিও ও মিডিয়া কনটেন্ট।</p></article>
+      <article class="activity"><div class="circle">✎</div><h3>Articles &amp; Research</h3><p>ইসলামিক বিষয়ক লেখা ও গবেষণা।</p></article>
+      <article class="activity"><div class="circle">♟</div><h3>Social Welfare</h3><p>সামাজিক কল্যাণ ও মানুষের পাশে থাকা।</p></article>
+    </div>
+    <a class="view-all" href="#contact">View All Activities →</a>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="section articles-section" id="articles">
+  <div class="container">
+    <div class="section-title"><span class="round">✎</span> সাম্প্রতিক আর্টিকেল</div>
+    <div class="article-grid">
+      <article class="article-card">
+        <div class="article-icon">✎</div>
+        <div class="article-date">১০ সেপ্টেম্বর, ২০২৬</div>
+        <h3>সালাতের গুরুত্ব ও তাৎপর্য</h3>
+        <p>ইসলামে সালাতের স্থান এবং তা কীভাবে একজন মুমিনের জীবনকে সুন্দর করে তোলে।</p>
+        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+      </article>
+      <article class="article-card">
+        <div class="article-icon">❈</div>
+        <div class="article-date">২ সেপ্টেম্বর, ২০২৬</div>
+        <h3>রমজানের প্রস্তুতি ও করণীয়</h3>
+        <p>রমজান মাসকে স্বাগত জানাতে ব্যক্তিগত ও পারিবারিক প্রস্তুতি কেমন হওয়া উচিত।</p>
+        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+      </article>
+      <article class="article-card">
+        <div class="article-icon">☙</div>
+        <div class="article-date">২৫ আগস্ট, ২০২৬</div>
+        <h3>সদাচরণ ও প্রতিবেশীর হক</h3>
+        <p>প্রতিবেশীর প্রতি রাসূলুল্লাহ (সা.)-এর শিক্ষা ও সামাজিক জীবনে তার প্রতিফলন।</p>
+        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+      </article>
+      <article class="article-card">
+        <div class="article-icon">✦</div>
+        <div class="article-date">১৮ আগস্ট, ২০২৬</div>
+        <h3>সন্তান লালন-পালনে ইসলামি দিকনির্দেশনা</h3>
+        <p>সন্তানদের ইসলামি শিক্ষায় গড়ে তোলার ক্ষেত্রে অভিভাবকদের করণীয় বিষয়সমূহ।</p>
+        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+      </article>
+    </div>
+    <p style="text-align:center;font-size:10px;color:#8b9490;margin-top:14px">নতুন আর্টিকেল যুক্ত করতে উপরের মতো একটি নতুন &lt;article class="article-card"&gt; ব্লক কপি করে বসান।</p>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section social-section">
+  <div class="container">
+    <div class="section-title" style="margin-bottom:15px">Connect With Me</div>
+    <div class="socials">
+      <a class="social" href="https://www.facebook.com/shekh.md.hasan" target="_blank"><span class="social-icon fb">f</span>Facebook</a>
+      <a class="social" href="https://www.youtube.com/@shekhmahmudulhasan" target="_blank"><span class="social-icon yt">▶</span>YouTube</a>
+      <a class="social" href="https://t.me/shekhmahmudulhasan" target="_blank"><span class="social-icon tg">➤</span>Telegram</a>
+      <a class="social" href="https://wa.me/shekh.md.hasan" target="_blank"><span class="social-icon wa">◉</span>WhatsApp</a>
+      <a class="social" href="https://www.instagram.com/shekh.md.hasan" target="_blank"><span class="social-icon ig">◎</span>Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>যোগাযোগ, মাহফিলের সিরিয়াল অথবা প্রয়োজনীয় বিষয়ে সরাসরি যোগাযোগ করতে পারেন।</p>
+      <div class="contact-details">
+        <div class="detail"><b>☎ Phone</b>+880 1711440955</div>
+        <div class="detail"><b>⌖ Location</b>Bangladesh</div>
+        <div class="detail"><b>✉ Email</b>shekhmahmudulhasan@gmail.com</div>
+        <div class="detail"><b>◎ Website</b>shekh.com.bd</div>
+      </div>
+    </div>
+
+    <div class="qr">
+      <div class="qr-code" aria-label="QR placeholder"></div>
+      <small>Scan to Save Contact</small>
+    </div>
+
+    <div class="dua">
+      <div>
+        <p>رَبِّ اجْعَلْ عَمَلَنَا خَالِصًا لِوَجْهِكَ الْكَرِيمِ</p>
+        <small>হে রব, আমাদের আমলকে আপনার সন্তুষ্টির জন্য কবুল করুন।</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Shekh Mahmudul Hasan. All Rights Reserved.</div>
+    <div class="footer-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#activities">Activities</a>
+      <a href="#articles">Articles</a><a href="#contact">Contact</a>
+    </div>
+    <div class="footer-brand">◉ shekh.com.bd</div>
+  </div>
+</footer>
+
+
+<!-- FORM DESIGN PLACEHOLDERS: পরে Google Forms-এর সঙ্গে সংযোগ করা হবে -->
+<div class="modal" id="mahhfilModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mahhfilTitle">
+    <div class="modal-head">
+      <div><h3 id="mahhfilTitle">মাহফিলের সিরিয়াল</h3><p>মাহফিলের জন্য আপনার তথ্য প্রদান করুন</p></div>
+      <button class="close-modal" type="button" data-close-modal aria-label="বন্ধ করুন">×</button>
+    </div>
+    <form class="form-body demo-form">
+      <p class="form-note">এটি বর্তমানে শুধু ডিজাইন প্রস্তুতি। Google Form তৈরি হলে এই ফর্মের Submit বাটনটি Google Form-এর সঙ্গে সংযুক্ত করা হবে।</p>
+      <div class="form-grid">
+        <div class="form-group"><label>আয়োজকের নাম <span class="req">*</span></label><input required type="text" name="organizer_name" placeholder="আয়োজকের নাম লিখুন"></div>
+        <div class="form-group"><label>মোবাইল নম্বর <span class="req">*</span></label><input required type="tel" name="phone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group"><label>মাহফিলের স্থান <span class="req">*</span></label><input required type="text" name="venue" placeholder="মাহফিলের স্থান"></div>
+        <div class="form-group"><label>সম্ভাব্য তারিখ</label><input type="date" name="date"></div>
+        <div class="form-group full"><label>বিষয় / আলোচনার বিষয়</label><input type="text" name="topic" placeholder="বয়ানের বিষয় লিখুন"></div>
+        <div class="form-group full"><label>অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অতিরিক্ত তথ্য লিখুন"></textarea></div>
+      </div>
+      <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠানোর জন্য প্রস্তুত</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="tadbirModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tadbirTitle">
+    <div class="modal-head">
+      <div><h3 id="tadbirTitle">তদবিরের আবেদন</h3><p>আবেদনকারীর তথ্য ও সমস্যার বিবরণ দিন</p></div>
+      <button class="close-modal" type="button" data-close-modal aria-label="বন্ধ করুন">×</button>
+    </div>
+    <form class="form-body demo-form">
+      <p class="form-note">এটি বর্তমানে শুধু ডিজাইন প্রস্তুতি। Google Form তৈরি হলে এই ফর্মের Submit বাটনটি Google Form-এর সঙ্গে সংযুক্ত করা হবে।</p>
+      <div class="form-grid">
+        <div class="form-group"><label>আবেদনকারীর নাম <span class="req">*</span></label><input required type="text" name="applicant_name" placeholder="আপনার নাম"></div>
+        <div class="form-group"><label>রোগীর সাথে আবেদনকারীর সম্পর্ক <span class="req">*</span></label><input required type="text" name="relationship" placeholder="যেমন: বাবা, মা, ভাই"></div>
+        <div class="form-group"><label>রোগীর নাম <span class="req">*</span></label><input required type="text" name="patient_name" placeholder="রোগীর নাম"></div>
+        <div class="form-group"><label>বয়স <span class="req">*</span></label><input required type="number" min="0" max="150" name="age" placeholder="বয়স"></div>
+        <div class="form-group"><label>বাবার নাম</label><input type="text" name="father_name" placeholder="বাবার নাম"></div>
+        <div class="form-group"><label>মায়ের নাম</label><input type="text" name="mother_name" placeholder="মায়ের নাম"></div>
+        <div class="form-group full"><label>সমস্যা <span class="req">*</span></label><input required type="text" name="problem" placeholder="সমস্যাটি সংক্ষেপে লিখুন"></div>
+        <div class="form-group"><label>সমস্যার সময়কাল</label><input type="text" name="duration" placeholder="যেমন: ৬ মাস / ২ বছর"></div>
+        <div class="form-group"><label>মোবাইল নম্বর <span class="req">*</span></label><input required type="tel" name="phone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group full"><label>বিস্তারিত আবেদন <span class="req">*</span></label><textarea required name="details" placeholder="আপনার আবেদন বিস্তারিত লিখুন"></textarea></div>
+        <div class="form-group full"><label>প্রয়োজনীয় অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অন্য কোনো তথ্য থাকলে লিখুন"></textarea></div>
+      </div>
+      <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠানোর জন্য প্রস্তুত</button></div>
+    </form>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  const n=document.getElementById('mobileNav');
+  n.style.display=n.style.display==='block'?'none':'block';
+}
+document.querySelectorAll('#mobileNav a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('mobileNav').style.display='none');
+});
+
+// Form UI only — Google Forms will be connected later.
+document.querySelectorAll('[data-open-modal]').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    const modal=document.getElementById(btn.dataset.openModal);
+    if(modal){modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  });
+});
+document.querySelectorAll('[data-close-modal]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const modal=btn.closest('.modal');
+    if(modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  });
+});
+document.querySelectorAll('.modal').forEach(modal=>{
+  modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}});
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') document.querySelectorAll('.modal.show').forEach(modal=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';});
+});
+document.querySelectorAll('.demo-form').forEach(form=>{
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    alert('ফর্মের ডিজাইন প্রস্তুত আছে। Google Form সংযোগ করার পর এই Submit বাটনটি সরাসরি আবেদন জমা দেবে।');
+  });
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
