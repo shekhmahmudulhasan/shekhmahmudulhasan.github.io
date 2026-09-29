@@ -226,6 +226,24 @@ img{display:block;max-width:100%}
 .article-reader p{margin:0 0 12px}
 .article-reader h4{margin:16px 0 6px;color:#17382d;font-size:17px}
 
+.hadiya-mini{margin-top:10px;text-align:left;font-size:12px}
+.hadiya-mini summary{
+  cursor:pointer;list-style:none;color:var(--green);font-weight:700;font-size:12px;
+  text-align:center;padding:6px 0;border:1px dashed var(--line);border-radius:7px;background:#f8faf8
+}
+.hadiya-mini summary::-webkit-details-marker{display:none}
+.hadiya-mini[open] summary{border-style:solid;margin-bottom:7px}
+.hadiya-mini-body{display:flex;flex-direction:column;gap:5px}
+.hadiya-mini-row{
+  display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);
+  border-radius:6px;padding:6px 8px;font-size:11px
+}
+.hadiya-mini-row span{color:var(--muted);flex-shrink:0}
+.hadiya-mini-row b{flex:1;color:var(--text);font-weight:700;line-height:1.5}
+.hadiya-mini-row .copy-btn{padding:4px 8px;font-size:10px;border-radius:5px}
+.hadiya-mini-row.bank{align-items:flex-start}
+.hadiya-mini-row.bank .copy-btn{margin-top:1px}
+
 /* SOCIAL */
 .social-section{background:#eef0eb}
 .socials{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
@@ -258,12 +276,16 @@ img{display:block;max-width:100%}
 .qr-svg{width:100%;height:auto;display:block}
 .qr small{font-size:11px;color:#6e7772}
 .dua{
-  min-height:145px;border-radius:9px;background:linear-gradient(145deg,#00533e,#00674c);
+  min-height:145px;border-radius:9px;
+  background:
+    linear-gradient(145deg,rgba(0,83,62,.88),rgba(0,103,76,.90)),
+    url("https://en.wikipedia.org/wiki/Special:FilePath/Al-Masjid_An-Nabawi_(Bird%27s_Eye_View).jpg") center/cover no-repeat;
   color:#fff;display:grid;place-items:center;text-align:center;padding:20px;position:relative;overflow:hidden
 }
 .dua:before,.dua:after{content:"";position:absolute;border:1px solid rgba(220,198,135,.35);border-radius:50%}
 .dua:before{width:190px;height:190px}.dua:after{width:140px;height:140px}
 .dua p{position:relative;font-family:serif;font-size:17px;direction:rtl}
+.dua cite{position:relative;display:block;font-size:11px;color:#dcc687;margin-top:6px;font-style:normal}
 .dua small{display:block;font-family:"Hind Siliguri";font-size:11px;direction:ltr;color:#dce9e3}
 
 /* FOOTER */
@@ -319,37 +341,6 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
 .hero-content,.quote,.about-grid,.activity-cards,.article-grid,.socials,.contact-grid{
   animation:rise .65s ease both
 }
-  /* মোবাইলে পড়ার সুবিধা */
-@media(max-width:800px){
-  .about-text p{font-size:16px;line-height:1.7}
-  .about-label{font-size:20px}
-  .role{font-size:17px}
-  .quote-ref{font-size:13px}
-  .quote-arabic{line-height:1.9}
-  .quote-bn{line-height:1.6}
-  .read-more{font-size:14px;padding:10px 16px}
-  .role-tags span{font-size:13px;padding:5px 11px}
-  .panel-action b{font-size:15px}
-  .panel-action small{font-size:12px}
-  .section-title{font-size:20px}
-  .activity h3{font-size:15px}
-  .activity p{font-size:12.5px;line-height:1.5}
-  .view-all{font-size:13px;padding:8px 14px}
-  .article-date{font-size:12.5px}
-  .article-card h3{font-size:17px}
-  .article-card p{font-size:14px;line-height:1.6}
-  .article-link{font-size:13.5px;padding:8px 14px}
-  .social{font-size:14.5px}
-  .contact-info>p{font-size:14px}
-  .detail{font-size:14px}
-  .dua p{font-size:19px;line-height:1.9}
-  .dua small{font-size:13px}
-  .form-group label{font-size:14px}
-  .form-group input,.form-group select,.form-group textarea{font-size:16px}
-  .form-note{font-size:13px}
-  footer{font-size:12.5px}
-  .footer-brand{font-size:13px}
-}
 </style>
 </head>
 
@@ -391,7 +382,7 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
       <!-- ছবি বদলাতে চাইলে নিচের src পরিবর্তন করুন। -->
       <img class="profile-photo" src="https://raw.githubusercontent.com/shekhmahmudulhasan/shekhmahmudulhasan.github.io/main/File/profile-cropped.png" alt="Shekh Mahmudul Hasan">
       <h1>Shekh Mahmudul Hasan</h1>
-      <div class="role">Imam, Khateeb &amp; Mudabbir</div>
+      <div class="role">Imam, Khateeb, Scholar &amp; Mudabbir</div>
 
       <div class="hero-actions">
         <a class="hero-btn" href="tel:+8801711440955"><b>☎</b>Call</a>
@@ -408,9 +399,9 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
   <!-- QUOTE -->
   <section class="quote">
     <div class="quote-inner">
-      <div class="quote-arabic">إِنَّ أَحْسَنَ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ</div>
-      <div class="quote-bn">সেরা মানুষ সেই, যে মানুষের জন্য সবচেয়ে বেশি উপকারী।</div>
-      <div class="quote-ref">বাণী/উক্তি — আপনার পছন্দের নির্ভরযোগ্য রেফারেন্স এখানে দিন</div>
+      <div class="quote-arabic">إِنَّ أَحْسَنَ النَّاسِ أَحْسَنُهُمْ خُلُقًا وَأَنْفَعُهُمْ لِلنَّاسِ</div>
+      <div class="quote-bn">নিশ্চয়ই মানুষের মধ্যে সর্বোত্তম হলো সে ব্যক্তি, যার চরিত্র সবচেয়ে সুন্দর এবং যে মানুষের জন্য সবচেয়ে বেশি উপকারী।</div>
+      <div class="quote-ref">আল-হাদিস</div>
     </div>
   </section>
 
@@ -419,13 +410,13 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
     <div class="about-grid">
       <div class="about-text">
         <div class="about-label"><span>●</span> About Me</div>
-        <p>আসসালামু আলাইকুম। আমি <b>শেখ মাহমুদুল হাসান</b>। দ্বীনি শিক্ষা, বয়ান, খুতবা, ইসলামিক শিক্ষা এবং মানুষের উপকারী কাজে নিজেকে নিয়োজিত রাখার চেষ্টা করি।</p>
-        <p>এই ওয়েবসাইটে আমার পরিচয়, বয়ান, ইসলামিক কার্যক্রম, মাহফিলের সিরিয়াল, তদবিরের আবেদন এবং যোগাযোগের মাধ্যম এক জায়গায় পাওয়া যাবে।</p>
+        <p>আমি <b>শেখ মাহমুদুল হাসান</b>। দ্বীনি শিক্ষা দাওয়াহর সঙ্গে সম্পৃক্ত থেকে বয়ান, খুতবা, ইসলামিক জ্ঞানচর্চা এবং মানুষের কল্যাণে কাজ করার চেষ্টা করি। কুরআন ও সুন্নাহর আলোকে দ্বীনের শিক্ষা মানুষের কাছে পৌঁছে দেওয়া এবং সমাজে কল্যাণকর ভূমিকা রাখাই আমার লক্ষ্য।</p>
+        <p>এই ওয়েবসাইটে আমার পরিচয়, দ্বীনি কার্যক্রম, বয়ান ও খুতবা এবং আমার সঙ্গে যোগাযোগের মাধ্যম একসঙ্গে পাওয়া যাবে।</p>
         <a class="read-more" href="#contact">Read More About Me&nbsp; →</a>
       </div>
 
       <div class="quick-info role-panel">
-        <div class="role-heading">পরিচয়</div>
+        <div class="role-heading">খিদমত</div>
         <div class="role-tags">
           <span>ইমাম</span>
           <span>খতিব</span>
@@ -493,28 +484,32 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
         <div class="article-date">১০ সেপ্টেম্বর, ২০২৬</div>
         <h3>সালাতের গুরুত্ব ও তাৎপর্য</h3>
         <p>ইসলামে সালাতের স্থান এবং তা কীভাবে একজন মুমিনের জীবনকে সুন্দর করে তোলে।</p>
-        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+        <!-- ### এই লিংকটা বদলান ("সালাতের গুরুত্ব ও তাৎপর্য") -->
+        <a class="article-link" href="articles/article-1.html">বিস্তারিত পড়ুন →</a>
       </article>
       <article class="article-card">
         <div class="article-icon">❈</div>
         <div class="article-date">২ সেপ্টেম্বর, ২০২৬</div>
         <h3>রমজানের প্রস্তুতি ও করণীয়</h3>
         <p>রমজান মাসকে স্বাগত জানাতে ব্যক্তিগত ও পারিবারিক প্রস্তুতি কেমন হওয়া উচিত।</p>
-        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+        <!-- ### এই লিংকটা বদলান ("রমজানের প্রস্তুতি ও করণীয়") -->
+        <a class="article-link" href="articles/article-2.html">বিস্তারিত পড়ুন →</a>
       </article>
       <article class="article-card">
         <div class="article-icon">☙</div>
         <div class="article-date">২৫ আগস্ট, ২০২৬</div>
         <h3>সদাচরণ ও প্রতিবেশীর হক</h3>
         <p>প্রতিবেশীর প্রতি রাসূলুল্লাহ (সা.)-এর শিক্ষা ও সামাজিক জীবনে তার প্রতিফলন।</p>
-        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+        <!-- ### এই লিংকটা বদলান ("সদাচরণ ও প্রতিবেশীর হক") -->
+        <a class="article-link" href="articles/article-3.html">বিস্তারিত পড়ুন →</a>
       </article>
       <article class="article-card">
         <div class="article-icon">✦</div>
         <div class="article-date">১৮ আগস্ট, ২০২৬</div>
         <h3>সন্তান লালন-পালনে ইসলামি দিকনির্দেশনা</h3>
         <p>সন্তানদের ইসলামি শিক্ষায় গড়ে তোলার ক্ষেত্রে অভিভাবকদের করণীয় বিষয়সমূহ।</p>
-        <a class="article-link" href="#">বিস্তারিত পড়ুন →</a>
+        <!-- ### এই লিংকটা বদলান ("সন্তান লালন-পালনে ইসলামি দিকনির্দেশনা") -->
+        <a class="article-link" href="articles/article-4.html">বিস্তারিত পড়ুন →</a>
       </article>
     </div>
   </div>
@@ -529,7 +524,6 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
       <a class="social" href="https://www.youtube.com/@shekhmahmudulhasan" target="_blank"><span class="social-icon yt">▶</span>YouTube</a>
       <a class="social" href="https://t.me/shekhmahmudulhasan" target="_blank"><span class="social-icon tg">➤</span>Telegram</a>
       <a class="social" href="https://wa.me/8801711440955" target="_blank"><span class="social-icon wa">◉</span>WhatsApp</a>
-      <a class="social" href="https://www.instagram.com/shekh.md.hasan" target="_blank"><span class="social-icon ig">◎</span>Instagram</a>
     </div>
   </div>
 </section>
@@ -550,16 +544,27 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
 
     <div class="qr">
       <!-- QR স্ক্যান করলে বা ক্লিক করলে যোগাযোগ .vcf আকারে সেভ হবে -->
-      <a class="qr-link" id="saveContact" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AN%3AHasan%3BShekh%20Mahmudul%3B%3B%3B%0D%0AFN%3AShekh%20Mahmudul%20Hasan%0D%0ATITLE%3AImam%20%26%20Khateeb%0D%0ATEL%3BTYPE%3DCELL%3A%2B8801711440955%0D%0AEMAIL%3Ashekhmahmudulhasan%40gmail.com%0D%0AURL%3Ahttps%3A//shekh.com.bd%0D%0AEND%3AVCARD%0D%0A" download="Shekh-Mahmudul-Hasan.vcf" title="ক্লিক করে কন্টাক্ট সেভ করুন">
+      <a class="qr-link" id="saveContact" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AN%3AHasan%3BShekh%20Mahmudul%3B%3B%3B%0D%0AFN%3AShekh%20Mahmudul%20Hasan%0D%0ATITLE%3AImam%2C%20Khateeb%2C%20Scholar%20%26%20Mudabbir%0D%0ATEL%3BTYPE%3DCELL%3A%2B8801711440955%0D%0AEMAIL%3Ashekhmahmudulhasan%40gmail.com%0D%0AURL%3Ahttps%3A//shekh.com.bd%0D%0AEND%3AVCARD%0D%0A" download="Shekh-Mahmudul-Hasan.vcf" title="ক্লিক করে কন্টাক্ট সেভ করুন">
         <svg class="qr-svg" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="Scan to save contact"><rect width="65" height="65" fill="#fff"/><path fill="#111" d="M4 4h7v1h-7zM13 4h3v1h-3zM17 4h4v1h-4zM23 4h3v1h-3zM27 4h3v1h-3zM31 4h1v1h-1zM34 4h1v1h-1zM36 4h2v1h-2zM40 4h2v1h-2zM45 4h7v1h-7zM54 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h1v1h-1zM17 5h5v1h-5zM23 5h1v1h-1zM25 5h4v1h-4zM32 5h2v1h-2zM35 5h2v1h-2zM38 5h1v1h-1zM41 5h1v1h-1zM43 5h1v1h-1zM48 5h1v1h-1zM51 5h1v1h-1zM54 5h1v1h-1zM60 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM12 6h3v1h-3zM17 6h2v1h-2zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h4v1h-4zM30 6h3v1h-3zM38 6h1v1h-1zM40 6h1v1h-1zM42 6h2v1h-2zM45 6h3v1h-3zM49 6h3v1h-3zM54 6h1v1h-1zM56 6h3v1h-3zM60 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM12 7h3v1h-3zM16 7h3v1h-3zM20 7h2v1h-2zM25 7h1v1h-1zM29 7h1v1h-1zM35 7h3v1h-3zM39 7h2v1h-2zM42 7h1v1h-1zM46 7h2v1h-2zM49 7h1v1h-1zM51 7h1v1h-1zM54 7h1v1h-1zM56 7h3v1h-3zM60 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM12 8h1v1h-1zM25 8h4v1h-4zM30 8h5v1h-5zM36 8h2v1h-2zM40 8h1v1h-1zM43 8h5v1h-5zM51 8h1v1h-1zM54 8h1v1h-1zM56 8h3v1h-3zM60 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h5v1h-5zM22 9h2v1h-2zM26 9h3v1h-3zM30 9h1v1h-1zM34 9h5v1h-5zM40 9h3v1h-3zM44 9h4v1h-4zM49 9h2v1h-2zM54 9h1v1h-1zM60 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM38 10h1v1h-1zM40 10h1v1h-1zM42 10h1v1h-1zM44 10h1v1h-1zM46 10h1v1h-1zM48 10h1v1h-1zM50 10h1v1h-1zM52 10h1v1h-1zM54 10h7v1h-7zM12 11h1v1h-1zM14 11h1v1h-1zM16 11h3v1h-3zM22 11h2v1h-2zM25 11h2v1h-2zM28 11h3v1h-3zM34 11h2v1h-2zM37 11h1v1h-1zM39 11h1v1h-1zM41 11h3v1h-3zM45 11h1v1h-1zM49 11h1v1h-1zM51 11h1v1h-1zM4 12h1v1h-1zM6 12h5v1h-5zM13 12h1v1h-1zM15 12h1v1h-1zM17 12h2v1h-2zM24 12h1v1h-1zM26 12h1v1h-1zM29 12h7v1h-7zM40 12h2v1h-2zM46 12h2v1h-2zM54 12h5v1h-5zM6 13h1v1h-1zM9 13h1v1h-1zM16 13h3v1h-3zM21 13h2v1h-2zM25 13h1v1h-1zM27 13h2v1h-2zM30 13h1v1h-1zM33 13h2v1h-2zM36 13h2v1h-2zM41 13h1v1h-1zM44 13h4v1h-4zM51 13h3v1h-3zM57 13h2v1h-2zM60 13h1v1h-1zM7 14h1v1h-1zM9 14h2v1h-2zM15 14h1v1h-1zM18 14h2v1h-2zM21 14h5v1h-5zM27 14h2v1h-2zM33 14h2v1h-2zM36 14h1v1h-1zM39 14h1v1h-1zM41 14h3v1h-3zM47 14h1v1h-1zM51 14h2v1h-2zM54 14h1v1h-1zM59 14h1v1h-1zM4 15h1v1h-1zM6 15h1v1h-1zM8 15h2v1h-2zM11 15h3v1h-3zM15 15h6v1h-6zM23 15h2v1h-2zM28 15h2v1h-2zM31 15h1v1h-1zM34 15h5v1h-5zM40 15h2v1h-2zM43 15h3v1h-3zM48 15h1v1h-1zM50 15h1v1h-1zM52 15h1v1h-1zM54 15h1v1h-1zM56 15h1v1h-1zM58 15h2v1h-2zM7 16h10v1h-10zM19 16h1v1h-1zM23 16h3v1h-3zM27 16h4v1h-4zM32 16h3v1h-3zM37 16h3v1h-3zM41 16h1v1h-1zM47 16h1v1h-1zM49 16h2v1h-2zM52 16h1v1h-1zM59 16h1v1h-1zM6 17h4v1h-4zM12 17h1v1h-1zM16 17h4v1h-4zM24 17h1v1h-1zM28 17h1v1h-1zM31 17h2v1h-2zM34 17h2v1h-2zM41 17h1v1h-1zM43 17h1v1h-1zM45 17h3v1h-3zM49 17h1v1h-1zM52 17h1v1h-1zM57 17h1v1h-1zM4 18h1v1h-1zM6 18h2v1h-2zM10 18h3v1h-3zM16 18h3v1h-3zM20 18h1v1h-1zM22 18h2v1h-2zM26 18h4v1h-4zM32 18h2v1h-2zM37 18h1v1h-1zM39 18h1v1h-1zM43 18h2v1h-2zM46 18h2v1h-2zM50 18h1v1h-1zM54 18h2v1h-2zM58 18h2v1h-2zM7 19h2v1h-2zM11 19h4v1h-4zM19 19h2v1h-2zM28 19h1v1h-1zM31 19h4v1h-4zM37 19h2v1h-2zM44 19h1v1h-1zM46 19h2v1h-2zM49 19h2v1h-2zM52 19h3v1h-3zM56 19h1v1h-1zM58 19h2v1h-2zM4 20h3v1h-3zM8 20h3v1h-3zM12 20h2v1h-2zM15 20h2v1h-2zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM24 20h1v1h-1zM26 20h2v1h-2zM29 20h1v1h-1zM33 20h2v1h-2zM37 20h1v1h-1zM39 20h2v1h-2zM43 20h1v1h-1zM47 20h1v1h-1zM49 20h2v1h-2zM52 20h1v1h-1zM54 20h2v1h-2zM57 20h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h2v1h-2zM13 21h1v1h-1zM18 21h1v1h-1zM22 21h1v1h-1zM24 21h2v1h-2zM28 21h1v1h-1zM30 21h5v1h-5zM36 21h1v1h-1zM39 21h3v1h-3zM43 21h6v1h-6zM51 21h2v1h-2zM56 21h1v1h-1zM58 21h3v1h-3zM5 22h3v1h-3zM10 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h1v1h-1zM18 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM27 22h1v1h-1zM29 22h10v1h-10zM42 22h1v1h-1zM44 22h3v1h-3zM48 22h1v1h-1zM53 22h5v1h-5zM59 22h1v1h-1zM6 23h2v1h-2zM12 23h2v1h-2zM16 23h4v1h-4zM21 23h5v1h-5zM28 23h2v1h-2zM32 23h1v1h-1zM34 23h1v1h-1zM36 23h4v1h-4zM43 23h1v1h-1zM48 23h5v1h-5zM54 23h2v1h-2zM57 23h4v1h-4zM4 24h1v1h-1zM9 24h2v1h-2zM12 24h1v1h-1zM14 24h1v1h-1zM20 24h3v1h-3zM24 24h1v1h-1zM28 24h1v1h-1zM30 24h2v1h-2zM33 24h3v1h-3zM37 24h1v1h-1zM40 24h1v1h-1zM42 24h1v1h-1zM46 24h2v1h-2zM49 24h1v1h-1zM52 24h3v1h-3zM59 24h2v1h-2zM4 25h2v1h-2zM7 25h3v1h-3zM11 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM17 25h3v1h-3zM22 25h2v1h-2zM25 25h5v1h-5zM31 25h1v1h-1zM34 25h2v1h-2zM37 25h1v1h-1zM39 25h1v1h-1zM41 25h1v1h-1zM44 25h1v1h-1zM46 25h2v1h-2zM51 25h2v1h-2zM58 25h1v1h-1zM6 26h2v1h-2zM9 26h2v1h-2zM12 26h2v1h-2zM16 26h1v1h-1zM18 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h4v1h-4zM31 26h1v1h-1zM33 26h2v1h-2zM38 26h1v1h-1zM43 26h1v1h-1zM47 26h1v1h-1zM49 26h3v1h-3zM53 26h4v1h-4zM59 26h1v1h-1zM4 27h1v1h-1zM8 27h2v1h-2zM12 27h1v1h-1zM16 27h2v1h-2zM22 27h1v1h-1zM24 27h1v1h-1zM27 27h2v1h-2zM31 27h1v1h-1zM35 27h1v1h-1zM38 27h1v1h-1zM43 27h2v1h-2zM50 27h1v1h-1zM52 27h2v1h-2zM55 27h5v1h-5zM5 28h1v1h-1zM8 28h3v1h-3zM14 28h1v1h-1zM16 28h3v1h-3zM20 28h1v1h-1zM22 28h2v1h-2zM25 28h1v1h-1zM29 28h2v1h-2zM33 28h1v1h-1zM37 28h2v1h-2zM40 28h3v1h-3zM45 28h3v1h-3zM49 28h2v1h-2zM58 28h1v1h-1zM60 28h1v1h-1zM6 29h2v1h-2zM9 29h1v1h-1zM11 29h1v1h-1zM13 29h2v1h-2zM21 29h1v1h-1zM23 29h2v1h-2zM26 29h4v1h-4zM31 29h1v1h-1zM33 29h3v1h-3zM40 29h1v1h-1zM45 29h2v1h-2zM48 29h1v1h-1zM51 29h3v1h-3zM56 29h3v1h-3zM60 29h1v1h-1zM4 30h1v1h-1zM8 30h5v1h-5zM14 30h5v1h-5zM20 30h4v1h-4zM25 30h4v1h-4zM30 30h5v1h-5zM37 30h3v1h-3zM42 30h2v1h-2zM45 30h3v1h-3zM49 30h8v1h-8zM58 30h1v1h-1zM6 31h3v1h-3zM12 31h3v1h-3zM16 31h4v1h-4zM23 31h1v1h-1zM25 31h1v1h-1zM27 31h1v1h-1zM29 31h2v1h-2zM34 31h1v1h-1zM38 31h1v1h-1zM40 31h2v1h-2zM43 31h1v1h-1zM49 31h1v1h-1zM51 31h2v1h-2zM56 31h3v1h-3zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h1v1h-1zM16 32h4v1h-4zM21 32h4v1h-4zM26 32h1v1h-1zM30 32h1v1h-1zM32 32h1v1h-1zM34 32h1v1h-1zM37 32h5v1h-5zM46 32h2v1h-2zM49 32h4v1h-4zM54 32h1v1h-1zM56 32h2v1h-2zM6 33h3v1h-3zM12 33h1v1h-1zM14 33h1v1h-1zM16 33h4v1h-4zM21 33h5v1h-5zM27 33h2v1h-2zM30 33h1v1h-1zM34 33h2v1h-2zM38 33h1v1h-1zM41 33h1v1h-1zM45 33h2v1h-2zM48 33h1v1h-1zM51 33h2v1h-2zM56 33h1v1h-1zM58 33h3v1h-3zM4 34h2v1h-2zM7 34h7v1h-7zM19 34h2v1h-2zM24 34h1v1h-1zM27 34h11v1h-11zM42 34h1v1h-1zM44 34h1v1h-1zM48 34h2v1h-2zM52 34h5v1h-5zM58 34h2v1h-2zM7 35h1v1h-1zM9 35h1v1h-1zM11 35h2v1h-2zM14 35h1v1h-1zM18 35h1v1h-1zM20 35h3v1h-3zM24 35h1v1h-1zM26 35h2v1h-2zM30 35h1v1h-1zM33 35h19v1h-19zM54 35h6v1h-6zM6 36h1v1h-1zM8 36h1v1h-1zM10 36h2v1h-2zM13 36h5v1h-5zM22 36h4v1h-4zM28 36h1v1h-1zM30 36h5v1h-5zM37 36h1v1h-1zM40 36h1v1h-1zM46 36h2v1h-2zM49 36h2v1h-2zM54 36h3v1h-3zM58 36h3v1h-3zM6 37h1v1h-1zM8 37h1v1h-1zM11 37h2v1h-2zM14 37h2v1h-2zM18 37h1v1h-1zM20 37h2v1h-2zM23 37h2v1h-2zM26 37h2v1h-2zM34 37h3v1h-3zM39 37h3v1h-3zM46 37h1v1h-1zM53 37h2v1h-2zM9 38h7v1h-7zM18 38h1v1h-1zM21 38h2v1h-2zM24 38h2v1h-2zM29 38h3v1h-3zM33 38h3v1h-3zM37 38h2v1h-2zM40 38h1v1h-1zM43 38h1v1h-1zM45 38h1v1h-1zM47 38h1v1h-1zM51 38h3v1h-3zM55 38h1v1h-1zM59 38h2v1h-2zM4 39h4v1h-4zM9 39h1v1h-1zM11 39h2v1h-2zM14 39h2v1h-2zM18 39h3v1h-3zM23 39h3v1h-3zM27 39h1v1h-1zM29 39h4v1h-4zM34 39h1v1h-1zM36 39h2v1h-2zM41 39h1v1h-1zM43 39h1v1h-1zM46 39h3v1h-3zM51 39h1v1h-1zM54 39h5v1h-5zM5 40h1v1h-1zM7 40h6v1h-6zM14 40h1v1h-1zM17 40h3v1h-3zM22 40h2v1h-2zM27 40h1v1h-1zM29 40h2v1h-2zM33 40h3v1h-3zM39 40h4v1h-4zM45 40h1v1h-1zM49 40h1v1h-1zM53 40h5v1h-5zM4 41h1v1h-1zM6 41h1v1h-1zM12 41h1v1h-1zM14 41h1v1h-1zM16 41h1v1h-1zM24 41h1v1h-1zM27 41h3v1h-3zM31 41h1v1h-1zM34 41h2v1h-2zM39 41h3v1h-3zM44 41h3v1h-3zM54 41h1v1h-1zM60 41h1v1h-1zM7 42h1v1h-1zM9 42h2v1h-2zM14 42h1v1h-1zM17 42h4v1h-4zM22 42h1v1h-1zM24 42h2v1h-2zM28 42h1v1h-1zM30 42h1v1h-1zM34 42h1v1h-1zM38 42h1v1h-1zM40 42h1v1h-1zM42 42h1v1h-1zM44 42h1v1h-1zM46 42h4v1h-4zM52 42h2v1h-2zM55 42h1v1h-1zM58 42h1v1h-1zM4 43h2v1h-2zM9 43h1v1h-1zM11 43h3v1h-3zM16 43h1v1h-1zM18 43h1v1h-1zM22 43h1v1h-1zM24 43h1v1h-1zM26 43h1v1h-1zM28 43h2v1h-2zM31 43h1v1h-1zM33 43h1v1h-1zM36 43h2v1h-2zM41 43h1v1h-1zM43 43h1v1h-1zM46 43h1v1h-1zM48 43h1v1h-1zM50 43h1v1h-1zM54 43h7v1h-7zM5 44h1v1h-1zM8 44h4v1h-4zM16 44h1v1h-1zM21 44h4v1h-4zM28 44h1v1h-1zM32 44h1v1h-1zM34 44h2v1h-2zM37 44h1v1h-1zM40 44h1v1h-1zM46 44h2v1h-2zM52 44h1v1h-1zM54 44h1v1h-1zM56 44h1v1h-1zM59 44h2v1h-2zM6 45h3v1h-3zM14 45h2v1h-2zM19 45h1v1h-1zM21 45h1v1h-1zM25 45h4v1h-4zM31 45h1v1h-1zM35 45h3v1h-3zM43 45h4v1h-4zM51 45h2v1h-2zM54 45h2v1h-2zM57 45h2v1h-2zM5 46h1v1h-1zM9 46h4v1h-4zM14 46h2v1h-2zM17 46h1v1h-1zM22 46h1v1h-1zM24 46h3v1h-3zM29 46h1v1h-1zM31 46h1v1h-1zM33 46h2v1h-2zM38 46h1v1h-1zM46 46h1v1h-1zM48 46h1v1h-1zM50 46h4v1h-4zM55 46h1v1h-1zM57 46h3v1h-3zM4 47h3v1h-3zM8 47h1v1h-1zM14 47h3v1h-3zM18 47h3v1h-3zM23 47h1v1h-1zM25 47h2v1h-2zM29 47h1v1h-1zM32 47h1v1h-1zM34 47h1v1h-1zM37 47h1v1h-1zM41 47h4v1h-4zM46 47h2v1h-2zM49 47h1v1h-1zM53 47h1v1h-1zM56 47h4v1h-4zM5 48h3v1h-3zM9 48h3v1h-3zM14 48h3v1h-3zM18 48h2v1h-2zM22 48h1v1h-1zM24 48h2v1h-2zM29 48h1v1h-1zM32 48h2v1h-2zM35 48h2v1h-2zM38 48h3v1h-3zM42 48h1v1h-1zM46 48h2v1h-2zM49 48h2v1h-2zM52 48h1v1h-1zM54 48h2v1h-2zM58 48h1v1h-1zM5 49h2v1h-2zM11 49h2v1h-2zM15 49h1v1h-1zM21 49h1v1h-1zM23 49h3v1h-3zM27 49h2v1h-2zM31 49h1v1h-1zM36 49h1v1h-1zM39 49h2v1h-2zM44 49h3v1h-3zM48 49h1v1h-1zM51 49h1v1h-1zM53 49h2v1h-2zM57 49h2v1h-2zM60 49h1v1h-1zM4 50h1v1h-1zM6 50h1v1h-1zM9 50h5v1h-5zM16 50h1v1h-1zM19 50h1v1h-1zM21 50h4v1h-4zM27 50h2v1h-2zM30 50h2v1h-2zM33 50h1v1h-1zM35 50h9v1h-9zM46 50h1v1h-1zM48 50h3v1h-3zM52 50h1v1h-1zM56 50h3v1h-3zM4 51h5v1h-5zM13 51h2v1h-2zM18 51h1v1h-1zM20 51h6v1h-6zM34 51h1v1h-1zM36 51h2v1h-2zM40 51h2v1h-2zM44 51h1v1h-1zM46 51h1v1h-1zM51 51h1v1h-1zM57 51h3v1h-3zM10 52h1v1h-1zM13 52h1v1h-1zM16 52h2v1h-2zM20 52h1v1h-1zM22 52h1v1h-1zM24 52h2v1h-2zM28 52h8v1h-8zM40 52h1v1h-1zM43 52h1v1h-1zM45 52h2v1h-2zM49 52h1v1h-1zM52 52h5v1h-5zM59 52h2v1h-2zM12 53h2v1h-2zM15 53h1v1h-1zM18 53h3v1h-3zM27 53h2v1h-2zM30 53h1v1h-1zM34 53h4v1h-4zM40 53h2v1h-2zM45 53h2v1h-2zM49 53h1v1h-1zM51 53h2v1h-2zM56 53h1v1h-1zM60 53h1v1h-1zM4 54h7v1h-7zM15 54h1v1h-1zM17 54h1v1h-1zM19 54h1v1h-1zM21 54h2v1h-2zM25 54h1v1h-1zM28 54h3v1h-3zM32 54h1v1h-1zM34 54h3v1h-3zM40 54h3v1h-3zM45 54h1v1h-1zM47 54h1v1h-1zM49 54h1v1h-1zM51 54h2v1h-2zM54 54h1v1h-1zM56 54h2v1h-2zM59 54h1v1h-1zM4 55h1v1h-1zM10 55h1v1h-1zM12 55h1v1h-1zM14 55h4v1h-4zM20 55h2v1h-2zM23 55h4v1h-4zM28 55h1v1h-1zM30 55h1v1h-1zM34 55h4v1h-4zM40 55h5v1h-5zM48 55h2v1h-2zM52 55h1v1h-1zM56 55h3v1h-3zM4 56h1v1h-1zM6 56h3v1h-3zM10 56h1v1h-1zM12 56h1v1h-1zM14 56h4v1h-4zM21 56h1v1h-1zM23 56h1v1h-1zM25 56h4v1h-4zM30 56h5v1h-5zM39 56h1v1h-1zM47 56h1v1h-1zM50 56h1v1h-1zM52 56h5v1h-5zM60 56h1v1h-1zM4 57h1v1h-1zM6 57h3v1h-3zM10 57h1v1h-1zM12 57h2v1h-2zM16 57h1v1h-1zM18 57h2v1h-2zM21 57h1v1h-1zM23 57h1v1h-1zM25 57h2v1h-2zM28 57h1v1h-1zM34 57h2v1h-2zM45 57h3v1h-3zM53 57h1v1h-1zM55 57h2v1h-2zM58 57h1v1h-1zM4 58h1v1h-1zM6 58h3v1h-3zM10 58h1v1h-1zM12 58h3v1h-3zM16 58h1v1h-1zM19 58h1v1h-1zM23 58h2v1h-2zM26 58h4v1h-4zM33 58h1v1h-1zM38 58h2v1h-2zM41 58h2v1h-2zM44 58h4v1h-4zM49 58h5v1h-5zM57 58h1v1h-1zM4 59h1v1h-1zM10 59h1v1h-1zM13 59h1v1h-1zM15 59h2v1h-2zM18 59h3v1h-3zM22 59h1v1h-1zM26 59h1v1h-1zM28 59h1v1h-1zM33 59h2v1h-2zM36 59h2v1h-2zM41 59h3v1h-3zM52 59h2v1h-2zM57 59h2v1h-2zM4 60h7v1h-7zM12 60h1v1h-1zM19 60h2v1h-2zM22 60h1v1h-1zM24 60h4v1h-4zM29 60h1v1h-1zM31 60h2v1h-2zM35 60h1v1h-1zM38 60h4v1h-4zM45 60h3v1h-3zM54 60h1v1h-1zM59 60h1v1h-1z"/></svg>
       </a>
       <small>Scan or click to Save Contact</small>
+
+      <details class="hadiya-mini">
+        <summary>হাদিয়া দিন</summary>
+        <div class="hadiya-mini-body">
+          <div class="hadiya-mini-row"><span>বিকাশ</span><b>01711440955</b><button class="copy-btn" type="button" data-copy="01711440955">Copy</button></div>
+          <div class="hadiya-mini-row"><span>নগদ</span><b>01711440955</b><button class="copy-btn" type="button" data-copy="01711440955">Copy</button></div>
+          <div class="hadiya-mini-row"><span>Cellfin</span><b>01511501755</b><button class="copy-btn" type="button" data-copy="01511501755">Copy</button></div>
+          <div class="hadiya-mini-row bank"><span>ব্যাংক</span><b>Islami Bank — Bakergang Br.<br>Shekh Mahmudul Hasan<br>A/C: 20503920200474503</b><button class="copy-btn" type="button" data-copy="20503920200474503">Copy</button></div>
+        </div>
+      </details>
     </div>
 
     <div class="dua">
       <div>
-        <p>رَبِّ اجْعَلْ عَمَلَنَا خَالِصًا لِوَجْهِكَ الْكَرِيمِ</p>
-        <small>হে রব, আমাদের আমলকে আপনার সন্তুষ্টির জন্য কবুল করুন।</small>
+        <p>رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ</p>
+        <small>"হে আমার রব, আপনি আমার প্রতি যে কল্যাণ নাযিল করবেন, আমি তো তারই মুখাপেক্ষী।"</small>
+        <cite>— সূরা আল-কাসাস, ২৮:২৪</cite>
       </div>
     </div>
   </div>
@@ -665,6 +670,24 @@ document.querySelectorAll('.modal').forEach(modal=>{
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape') document.querySelectorAll('.modal.show').forEach(modal=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';});
 });
+// ===== হাদিয়া নম্বর কপি =====
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',async()=>{
+    const val=btn.dataset.copy;
+    const original=btn.textContent;
+    try{
+      await navigator.clipboard.writeText(val);
+    }catch(e){
+      const ta=document.createElement('textarea');
+      ta.value=val;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');}catch(e2){}
+      ta.remove();
+    }
+    btn.textContent='Copied!';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent=original;btn.classList.remove('copied');},1800);
+  });
+});
+
 // ===== আর্টিকেল পড়ার পপ-আপ =====
 document.querySelectorAll('.article-link').forEach(link=>{
   link.addEventListener('click',e=>{
@@ -736,7 +759,7 @@ document.querySelectorAll('.demo-form').forEach(form=>{
 });
 
 // ===== Contact .vcf সেভ =====
-const VCARD=["BEGIN:VCARD", "VERSION:3.0", "N:Hasan;Shekh Mahmudul;;;", "FN:Shekh Mahmudul Hasan", "TITLE:Imam & Khateeb", "TEL;TYPE=CELL:+8801711440955", "EMAIL:shekhmahmudulhasan@gmail.com", "URL:https://shekh.com.bd", "END:VCARD"].join('\r\n')+'\r\n';
+const VCARD=["BEGIN:VCARD", "VERSION:3.0", "N:Hasan;Shekh Mahmudul;;;", "FN:Shekh Mahmudul Hasan", "TITLE:Imam, Khateeb, Scholar & Mudabbir", "TEL;TYPE=CELL:+8801711440955", "EMAIL:shekhmahmudulhasan@gmail.com", "URL:https://shekh.com.bd", "END:VCARD"].join('\r\n')+'\r\n';
 document.getElementById('saveContact').addEventListener('click',e=>{
   e.preventDefault();
   const blob=new Blob([VCARD],{type:'text/vcard;charset=utf-8'});
