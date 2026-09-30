@@ -1,67 +1,329 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ### এখানে আর্টিকেলের শিরোনাম দিন (ব্রাউজার ট্যাবে দেখাবে) -->
-<title>তাবিজ ব্যবহার ও তার হুকুম</title>
-<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAF9klEQVR4nO2b23HbSBBFj7YcgBEBEIHhCEBHYDgCwREYisBQBAtFsFIEK0dgKQKAEQARAOb0GVCUpV0AM4MZQNp7q1RVKPvz0OiZ6X4hoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKovyf6PV6Pxlj0YHf0DTNz6nX+F9SVdVP1trvzOwOmDkzf6uq6qfUa/1yVFX1QET/HAB4pKrqp9Rr/pIQ0aoDf5+ZV6nX/aUgotUJgFXqdX85kkAJoK7rH1Kv/UtBRD+MMdU9AMcEUFXVj9RyvhTvvfCqrEz5FRHNqqp6TS3rS0BEs2MABGBjjEktb/AQ0aaqqpc+ANz/PxHRJrXMwUJEmz4AGGP4F0RUpZY7SIhonZmDgQhs2rZlIrpFxLp3ACLaAAAT0S1jbGO/1pqZgxICKm/blpn5FhGvADAiukXEurcAZuY1M3MI6C2AiFbe+7bfh4h9JI4EmDh4xhjrEHBFRLc9tsHK2xJUReBK5AhwZOMzRVGDBRDwzMzOex+xADYzc7B2CADmzKzyPAgAwLwHZi0AQNS27bkAdInIWQvIEUlbBGZ6EXQFEACYYzHIcEXqvS8ArM89KwCsARi3bftDANh477mzM/QCgYheEXHRdX0AAJ1JiVzOWkAr3qEB2LQTIloOfaCLuq5f9nJKUB2Z2zqxNBRSFcVrPeROIupCbHRLmQjeeu/nAECICI6L2eOgYCFgtLwiokVmB/HRAMzMAeCuq6vlnpVQ+ACwyGwXPBqAiF48lI9xURSXRzYY5+Op9YJhh0N7O8dNav8OGiJ68d6zc27qnCsB4Nq2LTOzu5RCB4cxBiJyD2CClPMPGjZfsyjq1QjlSAAAAABJRU5ErkJggg==">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green:#075d46; --deep:#004b39; --dark:#12352b; --gold:#b9964f;
-  --cream:#f7f6f0; --soft:#eef4f0; --line:#dfe6e1; --text:#1c2823; --muted:#68746f;
-}
-*{box-sizing:border-box}
-body{margin:0;background:#f7f8f5;color:var(--text);font-family:"Hind Siliguri",sans-serif;line-height:1.85}
-a{color:var(--green);text-decoration:none}
-.bar{background:var(--green);color:#fff;padding:16px 20px}
-.bar .wrap{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;font-family:"Noto Serif Bengali",serif;font-weight:700;font-size:19px}
-main{max-width:760px;margin:0 auto;padding:34px 20px 70px}
-.back-link{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--green)}
-.article-date{font-size:13px;color:var(--gold);font-weight:700;margin-bottom:8px}
-/* ### h1 এর স্টাইল — চাইলে এখান থেকে সাইজ/রঙ বদলাতে পারেন */
-h1{font-family:"Noto Serif Bengali",serif;font-size:28px;color:var(--dark);margin:0 0 22px;line-height:1.4}
-article p{font-size:16px;margin:0 0 16px}
-article h2{font-family:"Noto Serif Bengali",serif;font-size:20px;color:var(--dark);margin:26px 0 10px}
-footer{text-align:center;font-size:13px;color:var(--muted);padding:24px 20px 40px}
-@media(max-width:480px){h1{font-size:23px}article p{font-size:15px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  তাবিজ ও ঝাড়ফুক এর হুকুম</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #075d46;
+      --deep: #004b39;
+      --gold: #b9964f;
+      --cream: #f7f6f0;
+      --white: #ffffff;
+      --text: #26332e;
+      --muted: #6c7772;
+      --border: #e5e2d7;
+      --soft-green: #eef6f2;
+      --soft-gold: #faf5e8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Hind Siliguri", sans-serif;
+      line-height: 1.9;
+    }
+
+    .topbar {
+      background: var(--deep);
+      color: white;
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 15px;
+      letter-spacing: .3px;
+    }
+
+    .topbar span {
+      color: #d7bd7d;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .article-header {
+      padding: 55px 0 35px;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .back:hover {
+      color: var(--gold);
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--deep);
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    article {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(24px, 5vw, 55px);
+      margin-bottom: 50px;
+      box-shadow: 0 12px 35px rgba(0, 60, 45, .06);
+    }
+
+    article h2 {
+      font-family: "Noto Serif Bengali", serif;
+      color: var(--green);
+      font-size: 25px;
+      margin: 42px 0 15px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article h2:first-child {
+      margin-top: 0;
+    }
+
+    article h3 {
+      color: var(--deep);
+      font-size: 20px;
+      margin: 28px 0 10px;
+    }
+
+    article p {
+      font-size: 17px;
+      margin-bottom: 17px;
+    }
+
+    article ul,
+    article ol {
+      padding-left: 25px;
+      margin: 10px 0 22px;
+    }
+
+    article li {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .arabic {
+      direction: rtl;
+      text-align: right;
+      font-family: "Noto Serif Bengali", serif;
+      font-size: 23px;
+      line-height: 2.2;
+      background: var(--soft-green);
+      color: var(--deep);
+      border-right: 4px solid var(--gold);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0 12px;
+    }
+
+    .meaning {
+      background: var(--soft-gold);
+      border: 1px solid #eadfbe;
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .meaning strong {
+      color: var(--deep);
+    }
+
+    .source {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: -5px;
+      margin-bottom: 25px;
+    }
+
+    .note {
+      background: var(--soft-green);
+      border-left: 4px solid var(--green);
+      padding: 18px 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+    }
+
+    .warning {
+      background: #fff8ed;
+      border-left: 4px solid var(--gold);
+      padding: 18px 20px;
+      border-radius: 10px;
+      margin: 25px 0;
+    }
+
+    .highlight {
+      background: linear-gradient(
+        135deg,
+        rgba(7, 93, 70, .08),
+        rgba(185, 150, 79, .10)
+      );
+      border: 1px solid rgba(185, 150, 79, .35);
+      padding: 24px;
+      border-radius: 15px;
+      margin: 30px 0;
+    }
+
+    .highlight strong {
+      color: var(--deep);
+    }
+
+    .dua {
+      text-align: center;
+      background: var(--deep);
+      color: white;
+      padding: 28px 20px;
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+
+    .dua .arabic {
+      background: transparent;
+      border: none;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0 0 12px;
+    }
+
+    .dua .translation {
+      color: #e8eee9;
+      font-size: 16px;
+    }
+
+    .conclusion {
+      background: var(--soft-green);
+      border: 1px solid #cfe2da;
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 35px;
+    }
+
+    .conclusion h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--deep);
+      color: #dbe7e1;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #e2c77f;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 20px, 900px);
+      }
+
+      .article-header {
+        padding: 40px 8px 25px;
+      }
+
+      article {
+        border-radius: 16px;
+        padding: 22px 18px;
+      }
+
+      article p,
+      article li {
+        font-size: 16px;
+      }
+
+      article h2 {
+        font-size: 22px;
+      }
+
+      .arabic {
+        font-size: 20px;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="bar"><div class="wrap">✥ Shekh.com.bd</div></div>
+  <div class="topbar">
+    ✥ <span>Shekh.com.bd</span>
+  </div>
 
-<main>
-  <a class="back-link" href="../index.html#articles">← মূল পাতায় ফিরে যান</a>
+  <header class="article-header">
+    <div class="container">
 
-    <div class="label">ইসলামিক প্রবন্ধ</div>
+      <a href="../index.html#articles" class="back">
+        ← মূল পাতায় ফিরে যান
+      </a>
 
-    <h1>তাবিজ ব্যবহার ও তার হুকুম</h1>
+      <div class="date">
+        ইসলামিক প্রবন্ধ
+      </div>
 
-    <p class="subtitle">
-      কুরআন-সুন্নাহ, সাহাবায়ে কেরামের আমল এবং ফকিহদের বক্তব্যের আলোকে তাবিজ ও রুকইয়াহর বিস্তারিত আলোচনা
-    </p>
+      <h1>
+        তাবিজ ব্যবহার ও ঝাড়ফুক এর হুকুম
+      </h1>
 
+      <p class="subtitle">
+        কুরআন-সুন্নাহ, সাহাবায়ে কেরামের আমল এবং ফুকাহায়ে কেরামদের মতামতের আলোকে তাবিজ ব্যবহার ও ঝাড়ফুক এর হুকুম
+      </p>
+
+    </div>
   </header>
 
 
   <main class="container">
 
     <article>
-
       <p>
-        তাবিজ, রুকইয়াহ এবং চিকিৎসা নিয়ে মুসলিম সমাজে দীর্ঘদিন ধরে আলোচনা ও মতভেদ রয়েছে।
-        বিশেষ করে কুরআনের আয়াত, আল্লাহর নাম অথবা মাসনূন দোয়া লিখে তাবিজ হিসেবে ব্যবহার করা
-        জায়েয কি না—এ বিষয়ে আলেমদের মধ্যে মতভেদ রয়েছে।
+        অসুস্থতা, বিপদ-আপদ, বদনজর, জাদু কিংবা বিভিন্ন অজানা সমস্যার সময় মানুষ আল্লাহর সাহায্য কামনা করে। 
+        এ ক্ষেত্রে কেউ কুরআনের আয়াত ও মাসনূন দোয়ার মাধ্যমে রুকইয়াহ করেন, আবার কেউ তাবিজ-কবচ ব্যবহার করেন।
+      <p>
+        তাবিজ ব্যবহারের বিষয়টি নিয়ে মুসলিম সমাজে দীর্ঘদিন ধরে আলোচনা ও মতভেদ রয়েছে। 
+তাই কোনো প্রচলিত ধারণার ওপর নির্ভর না করে কুরআন-সুন্নাহর আলোকে বিষয়টি বোঝা জরুরি।
       </p>
 
       <p>
-        এ বিষয়ে সঠিক অবস্থান বুঝতে হলে শুধু একটি হাদিসের একটি শব্দ দেখে সিদ্ধান্ত নেওয়া যথেষ্ট নয়।
-        বরং রুকইয়াহ সম্পর্কে রাসূলুল্লাহ ﷺ-এর অন্যান্য হাদিস, সাহাবায়ে কেরামের ঘটনা এবং
-        প্রাচীন মুহাদ্দিস ও ফকিহদের ব্যাখ্যাও একসঙ্গে দেখতে হবে।
+        বিশেষভাবে জানা দরকার—কোন ধরনের তাবিজের কথা হাদীসে এসেছে, 
+কোন ধরনের ঝাড়ফুঁক নিষিদ্ধ এবং কোন ধরনের রুকইয়াহ রাসূলুল্লাহ ﷺ অনুমোদন করেছেন।
       </p>
 
 
