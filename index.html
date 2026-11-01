@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://en.wikipedia.org https://upload.wikimedia.org; connect-src https://script.google.com https://script.googleusercontent.com; frame-src https://challenges.cloudflare.com; form-action 'self'; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://en.wikipedia.org https://upload.wikimedia.org; connect-src https://docs.google.com; form-action 'self' https://docs.google.com; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Shekh Mahmudul Hasan — Imam, Khateeb & Mudabbir">
 <title>SHEKH</title>
@@ -170,7 +170,6 @@ img{display:block;max-width:100%}
 
 /* FORM MODALS */
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
-.cf-turnstile{margin-top:14px;min-height:65px}
 .modal{position:fixed;inset:0;background:rgba(9,34,26,.62);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}
 .modal.show{display:flex}
 .modal-box{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border:1px solid #e2e9e5;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative}
@@ -357,7 +356,6 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
   animation:rise .65s ease both
 }
 </style>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </head>
 
 <body>
@@ -626,7 +624,6 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
         <div class="form-group full"><label>বিষয় / আলোচনার বিষয়</label><input type="text" name="topic" placeholder="বয়ানের বিষয় লিখুন"></div>
         <div class="form-group full"><label>অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অতিরিক্ত তথ্য লিখুন"></textarea></div>
       </div>
-      <div class="cf-turnstile"></div>
       <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠান</button></div>
     </form>
   </div>
@@ -660,7 +657,6 @@ footer{background:#063e30;color:#c9d9d3;font-size:11px}
         <div class="form-group full"><label>বিস্তারিত আবেদন <span class="req">*</span></label><textarea required name="details" placeholder="আপনার আবেদন বিস্তারিত লিখুন"></textarea></div>
         <div class="form-group full"><label>প্রয়োজনীয় অতিরিক্ত তথ্য</label><textarea name="extra" placeholder="প্রয়োজনীয় অন্য কোনো তথ্য থাকলে লিখুন"></textarea></div>
       </div>
-      <div class="cf-turnstile"></div>
       <div class="form-actions"><button class="form-btn cancel" type="button" data-close-modal>বন্ধ করুন</button><button class="form-btn submit" type="submit">আবেদন পাঠান</button></div>
     </form>
   </div>
@@ -739,26 +735,25 @@ document.querySelectorAll('.article-link').forEach(link=>{
     modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
   });
 });
-// ===== ফর্ম সংযোগ (Google Apps Script + Cloudflare Turnstile) =====
-// ### সেটআপের পর নিচের দুটি মান বসান — বিস্তারিত: apps-script/README.md
-const FORM_ENDPOINT='PASTE_APPS_SCRIPT_WEB_APP_URL';
-const TURNSTILE_SITEKEY='PASTE_TURNSTILE_SITE_KEY';
-const FORM_ERRORS={
-  captcha:'যাচাই সম্পন্ন হয়নি। একটু অপেক্ষা করে আবার চেষ্টা করুন।',
-  phone:'সঠিক মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।',
-  missing:'সব বাধ্যতামূলক ঘর পূরণ করুন।',
-  rate:'অনেকগুলো আবেদন জমা হয়েছে। কিছু সময় পরে আবার চেষ্টা করুন।'
-};
-// প্রথমবার ফর্মে হাত দিলে Turnstile যাচাই শুরু হয়, যাতে পাঠানোর আগেই তৈরি থাকে
-const renderTurnstile=form=>{
-  if(form._ts!==undefined||!window.turnstile)return;
-  form._ts=turnstile.render(form.querySelector('.cf-turnstile'),{sitekey:TURNSTILE_SITEKEY,action:form.dataset.form,language:'bn'});
+// ===== Google Form সংযোগ =====
+const FORM_ACTION='https://docs.google.com/forms/d/e/1FAIpQLSdrR_P51PfhiuJCZzj-FBmFkTZU6qRHKDkos29PKOyBLk1FsQ/formResponse';
+const TYPE_ENTRY='entry.78136299';
+const FORM_CONFIG={
+  mahfil:{type:'মাহফিল',pages:'0,1',fields:{
+    inviter_name:'entry.226247084',phone:'entry.1388392420',mahfil_type:'entry.1820350774',venue:'entry.1420380455',
+    date:'entry.1964563570',topic:'entry.396635434',extra:'entry.2143371266'}},
+  tadbir:{type:'তদবির',pages:'0,2',fields:{
+    applicant_name:'entry.670107599',relationship:'entry.176668510',patient_name:'entry.105343870',
+    age:'entry.1633836004',occupation:'entry.2044460373',father_name:'entry.2125238250',
+    mother_name:'entry.398823477',problem:'entry.849215957',duration:'entry.860880995',
+    phone:'entry.779497027',details:'entry.134869719',extra:'entry.1774800442'}}
 };
 document.querySelectorAll('.demo-form').forEach(form=>{
+  const cfg=FORM_CONFIG[form.dataset.form];
   const status=document.createElement('p');
   status.className='form-note';status.style.display='none';status.setAttribute('role','status');
   form.querySelector('.form-actions').before(status);
-  form.addEventListener('focusin',()=>{if(!form._t)form._t=Date.now();renderTurnstile(form);});
+  form.addEventListener('focusin',()=>{if(!form._t)form._t=Date.now();});
   form.querySelectorAll('input[type=text]').forEach(i=>{if(!i.maxLength||i.maxLength<0)i.maxLength=200;});
   form.querySelectorAll('textarea').forEach(t=>{t.maxLength=2000;});
   form.addEventListener('submit',async e=>{
@@ -775,18 +770,25 @@ document.querySelectorAll('.demo-form').forEach(form=>{
     if(tel){const n=tel.value.replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d)).replace(/[\s-]/g,'');
       if(!/^(\+?88)?01[3-9]\d{8}$/.test(n)){say('সঠিক মোবাইল নম্বর লিখুন (যেমন: 01XXXXXXXXX)।');tel.focus();return;}
       tel.value=n;}
-    renderTurnstile(form);
-    const token=form._ts!==undefined?turnstile.getResponse(form._ts):'';
-    if(!token){say(FORM_ERRORS.captcha);return;}
     const btn=form.querySelector('.form-btn.submit');
     const label=btn.textContent;
     btn.disabled=true;btn.textContent='পাঠানো হচ্ছে...';
-    const params=new URLSearchParams(new FormData(form));
-    params.set('form',form.dataset.form);
-    params.set('cf-turnstile-response',token);
+    const data=new FormData(form);
+    const params=new URLSearchParams();
+    params.append(TYPE_ENTRY,cfg.type);
+    for(const [name,entry] of Object.entries(cfg.fields)){
+      let val=(data.get(name)||'').toString().trim();
+      if(name==='date' && val){
+        const [y,m,d]=val.split('-');
+        params.append(entry+'_year',y);
+        params.append(entry+'_month',String(parseInt(m,10)));
+        params.append(entry+'_day',String(parseInt(d,10)));
+      }
+      if(val) params.append(entry,val);
+    }
+    params.append('pageHistory',cfg.pages);
     try{
-      const out=await (await fetch(FORM_ENDPOINT,{method:'POST',body:params})).json();
-      if(!out.ok)throw new Error(out.error);
+      await fetch(FORM_ACTION,{method:'POST',mode:'no-cors',body:params});
       status.textContent='জাযাকাল্লাহু খাইরান। আপনার আবেদন সফলভাবে জমা হয়েছে।';
       status.style.display='block';
       try{localStorage.setItem('lastSubmit_'+form.dataset.form,String(Date.now()));}catch(_){}
@@ -797,9 +799,9 @@ document.querySelectorAll('.demo-form').forEach(form=>{
         document.body.style.overflow='';status.style.display='none';
       },2500);
     }catch(err){
-      say(FORM_ERRORS[err.message]||'দুঃখিত, আবেদন পাঠানো যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।');
+      status.textContent='দুঃখিত, আবেদন পাঠানো যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।';
+      status.style.display='block';
     }
-    turnstile.reset(form._ts); // প্রতিটি টোকেন একবারই ব্যবহার করা যায়
     btn.disabled=false;btn.textContent=label;
   });
 });
