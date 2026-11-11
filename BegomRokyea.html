@@ -240,7 +240,7 @@ function cardHTML(p){
   return `<div class="cell"><div class="card">
     <div class="head"><img class="logo" src="${LOGO_BW}" alt="">
       <div class="htxt"><div class="mn">${SCHOOL}</div><div class="ad">${ADDRESS}</div></div></div>
-    <div class="title">আসন বিন্যাস</div>
+    <div class="title">বার্ষিক পরীক্ষা – ২০২৬</div>
     <div class="fields">
       <div class="f"><span class="l">নাম:</span><span class="v">${esc(p.n)}</span></div>
       <div class="f"><span class="l">রোল:</span><span class="v">${esc(p.r)}</span></div>
@@ -259,6 +259,7 @@ function cardInner2(p, short){
     <div class="h2w"><img class="lg2" src="${LOGO}" alt="">
       <div class="ht2"><div class="a">বেগম রোকেয়া ক্বিরায়াতুল কুরআন মাদরাসা</div><div class="b">${ADDRESS}</div></div></div>
     <div class="t2">এডমিট কার্ড</div>
+    <div class="exam-year">বার্ষিক পরীক্ষা – ২০২৬</div>
     <svg class="dv" width="66mm" height="5mm" viewBox="0 0 264 20" aria-hidden="true"><g fill="none" stroke="#1f5130" stroke-width="1"><path d="M0 10H100M164 10H264"/><path d="M132 1L141 10L132 19L123 10Z"/><path d="M104 10C112 3 120 3 123 10C120 17 112 17 104 10ZM160 10C152 3 144 3 141 10C144 17 152 17 160 10Z"/></g></svg>
     <div class="fs2">
       <div class="f2"><span class="l">নাম:</span><span class="v">${esc(p.n)}</span></div>
@@ -487,7 +488,16 @@ $("dl").onclick = async () => {
     white-space:normal !important;
   }
 </style>
-
+<style id="annual-exam-2026">
+  .exam-year {
+    text-align: center;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1f5130;
+    line-height: 1.25;
+    margin-top: 0.5mm;
+  }
+</style>
 </body>
 </html>
 
